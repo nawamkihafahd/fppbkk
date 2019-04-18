@@ -22,7 +22,8 @@
 <link href="<c:url value="/resources/css/custom.css"/>" rel="stylesheet">
 </head>
 
-<body>
+<body class="own-texture-bg">
+
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -62,7 +63,7 @@
 
       <div class="col-lg-3">
 
-        <h2 class="my-4">Eatadakimakan</h2>
+        <h2 class="my-4 eat-block-clear">Eatadakimakan</h2>
         <div class="list-group">
           <a href="#" class="list-group-item font-brown">Recommended</a>
           <a href="#" class="list-group-item font-brown">Randomizer</a>
@@ -105,13 +106,13 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <a href="#"><img class="card-img-top" src="<c:url value="/resources/img/gado-item.jpg"/>" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#"class="font-brown">Item One</a>
+                  <a href="#"class="font-brown">Gado-Gado</a>
                 </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                <h5>Rp 12.000</h5>
+                <p class="card-text">Gado-gado Khas Jakarta!</p>
               </div>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -121,13 +122,13 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <a href="#"><img class="card-img-top" src="<c:url value="/resources/img/geprek-item.jpg"/>" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#"class="font-brown">Item Two</a>
+                  <a href="#"class="font-brown">Ayam Geprek</a>
                 </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                <h5>Rp 14.000</h5>
+                <p class="card-text">Ayam Geprek Pedas! Tersedia dalam berbagai level</p>
               </div>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -137,13 +138,13 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <a href="#"><img class="card-img-top" src="<c:url value="/resources/img/nasgor-item.jpg"/>" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#"class="font-brown">Item Three</a>
+                  <a href="#"class="font-brown">Nasi Goreng</a>
                 </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                <h5>Rp 14.000</h5>
+                <p class="card-text">Nasi Goreng dengan berbagai varian: ayam,sosis, kambing, cumi dll.</p>
               </div>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -153,13 +154,13 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <a href="#"><img class="card-img-top" src="<c:url value="/resources/img/padang-item.jpg"/>" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#"class="font-brown">Item Four</a>
+                  <a href="#"class="font-brown">Nasi Padang</a>
                 </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                <h5>Rp 13.000</h5>
+                <p class="card-text">Tersedia berbagai macam Lauk</p>
               </div>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -169,13 +170,13 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <a href="#"><img class="card-img-top" src="<c:url value="/resources/img/sate-item.jpg"/>" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#"class="font-brown">Item Five</a>
+                  <a href="#"class="font-brown">Sate Kambing</a>
                 </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                <h5>Rp 18.000</h5>
+                <p class="card-text">Sata Kambing Khas Madura.</p>
               </div>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -185,13 +186,13 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <a href="#"><img class="card-img-top" src="<c:url value="/resources/img/soto-item.jpg"/>" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#"class="font-brown">Item Six</a>
+                  <a href="#"class="font-brown">Soto Ayam</a>
                 </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                <h5>Rp 12.000</h5>
+                <p class="card-text">Soto Ayam segar Khas Lamongan</p>
               </div>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
