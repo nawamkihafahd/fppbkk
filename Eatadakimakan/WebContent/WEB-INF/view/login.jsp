@@ -19,10 +19,10 @@
 
   <!-- Custom styles for this template-->
   <link href="<c:url value="/resources/css/sb-admin.css"/>" rel="stylesheet">
-
+<link href="<c:url value="/resources/css/custom.css"/>" rel="stylesheet">
 </head>
 
-<body class="bg-dark">
+<body class="own-custom-res-bg">
 
   <div class="container">
     <div class="card card-login mx-auto mt-5">

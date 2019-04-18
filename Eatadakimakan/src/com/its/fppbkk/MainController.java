@@ -21,4 +21,9 @@ public class MainController {
 		return "login";
 	}
 	
+	@RequestMapping("/add_restaurant")
+	public String add_resto() {
+		return "add_restaurant";
+	}
+	
 }

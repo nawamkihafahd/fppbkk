@@ -1,0 +1,12 @@
+.own-custom-res-bg{
+	background-image: url(../img/res-bg.png);
+	background-position: center;
+}
+
+.own-white-block{
+	backgrounc-color: white;
+}
+
+.font-brown{
+	color: brown;
+}

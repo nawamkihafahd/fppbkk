@@ -19,7 +19,7 @@
 
   <!-- Custom styles for this template -->
   <link href=" <c:url value="/resources/css/shop-homepage.css"/>" rel="stylesheet">
-
+<link href="<c:url value="/resources/css/custom.css"/>" rel="stylesheet">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-  <!--     <a class="navbar-brand" href="#">Start Bootstrap</a> -->
+       <a class="navbar-brand" href="#">>Username Here< </a> 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -37,6 +37,9 @@
             <a class="nav-link" href="#">Home
               <span class="sr-only">(current)</span>
             </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./add_restaurant">Add Restaurant</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">About</a>
@@ -59,11 +62,11 @@
 
       <div class="col-lg-3">
 
-        <h1 class="my-4">Eatadakimakan</h1>
+        <h2 class="my-4">Eatadakimakan</h2>
         <div class="list-group">
-          <a href="#" class="list-group-item">Recommended</a>
-          <a href="#" class="list-group-item">Randomizer</a>
-          <a href="#" class="list-group-item">History</a>
+          <a href="#" class="list-group-item font-brown">Recommended</a>
+          <a href="#" class="list-group-item font-brown">Randomizer</a>
+          <a href="#" class="list-group-item font-brown">History</a>
         </div>
 
       </div>
@@ -79,13 +82,13 @@
           </ol>
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+              <img class="d-block img-fluid" src="<c:url value="/resources/img/pecel-long.jpg"/>" alt="Pecel">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+              <img class="d-block img-fluid" src="<c:url value="/resources/img/soto-long.jpg"/>" alt="Soto" >
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+              <img class="d-block img-fluid" src="<c:url value="/resources/img/nasgor-long.jpg"/>" alt="Nasi Goreng" >
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -105,7 +108,7 @@
               <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">Item One</a>
+                  <a href="#"class="font-brown">Item One</a>
                 </h4>
                 <h5>$24.99</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
@@ -121,7 +124,7 @@
               <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">Item Two</a>
+                  <a href="#"class="font-brown">Item Two</a>
                 </h4>
                 <h5>$24.99</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
@@ -137,7 +140,7 @@
               <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">Item Three</a>
+                  <a href="#"class="font-brown">Item Three</a>
                 </h4>
                 <h5>$24.99</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
@@ -153,7 +156,7 @@
               <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">Item Four</a>
+                  <a href="#"class="font-brown">Item Four</a>
                 </h4>
                 <h5>$24.99</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
@@ -169,7 +172,7 @@
               <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">Item Five</a>
+                  <a href="#"class="font-brown">Item Five</a>
                 </h4>
                 <h5>$24.99</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
@@ -185,7 +188,7 @@
               <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">Item Six</a>
+                  <a href="#"class="font-brown">Item Six</a>
                 </h4>
                 <h5>$24.99</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
