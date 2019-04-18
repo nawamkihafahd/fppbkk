@@ -34,7 +34,8 @@ Analisis:
 _____________________________________________________________
 
 **Sitemap**:
-https://raw.githubusercontent.com/nawamkihafahd/fppbkk/master/Sitemap%20Eatadakimakan.png
+![](https://raw.githubusercontent.com/nawamkihafahd/fppbkk/master/Sitemap%20Eatadakimakan.png)
+
 
 _____________________________________________________________
 **Tampilan**:
