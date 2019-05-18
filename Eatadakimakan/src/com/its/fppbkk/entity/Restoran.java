@@ -1,10 +1,18 @@
 package com.its.fppbkk.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,12 +32,33 @@ public class Restoran {
 	
 	@Column(name="Resto_Alamat")
 	private String restoAlamat;
-
+	
+	@Column(name="Resto_Budget_Min")
+	private int restoBudgetMin;
+	
+	@Column(name="Resto_Budget_Max")
+	private int restoBudgetMax;
+	
+	@OneToMany(mappedBy="restoran")
+	private List<Menu> menus;
+	
+	@ManyToMany(fetch=FetchType.LAZY,cascade= {CascadeType.DETACH, CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+	@JoinTable(name="resto_tag", joinColumns=@JoinColumn(name="resto_id"), inverseJoinColumns = @JoinColumn(name="tag_id"))
+	private List<Tag> tags;
+	
+	
 	public Restoran(String restoNama, String restoDaerah, String restoAlamat) {
 		this.restoNama = restoNama;
 		this.restoDaerah = restoDaerah;
 		this.restoAlamat = restoAlamat;
 	}
+	
+	
+
+	public Restoran() {
+	}
+
+
 
 	public int getId() {
 		return id;
@@ -61,6 +90,38 @@ public class Restoran {
 
 	public void setRestoAlamat(String restoAlamat) {
 		this.restoAlamat = restoAlamat;
+	}
+
+	public int getRestoBudgetMin() {
+		return restoBudgetMin;
+	}
+
+	public void setRestoBudgetMin(int restoBudgetMin) {
+		this.restoBudgetMin = restoBudgetMin;
+	}
+
+	public int getRestoBudgetMax() {
+		return restoBudgetMax;
+	}
+
+	public void setRestoBudgetMax(int restoBudgetMax) {
+		this.restoBudgetMax = restoBudgetMax;
+	}
+
+	public List<Menu> getMenus() {
+		return menus;
+	}
+
+	public void setMenus(List<Menu> menus) {
+		this.menus = menus;
+	}
+
+	public List<Tag> getTags() {
+		return tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
 	}
 	
 	
