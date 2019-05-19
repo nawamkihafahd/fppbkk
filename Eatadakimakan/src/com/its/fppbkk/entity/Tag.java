@@ -26,7 +26,7 @@ public class Tag {
 	@Column(name="Tag_Nama")
 	private String tagNama;
 	
-	@ManyToMany(fetch=FetchType.LAZY,cascade= {CascadeType.DETACH, CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+	@ManyToMany(fetch=FetchType.EAGER,cascade= {CascadeType.DETACH, CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
 	@JoinTable(name="resto_tag", joinColumns=@JoinColumn(name="tag_id"), inverseJoinColumns = @JoinColumn(name="resto_id"))
 	private List<Restoran> resto;
 

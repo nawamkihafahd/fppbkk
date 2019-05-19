@@ -8,7 +8,9 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.its.fppbkk.entity.Menu;
 import com.its.fppbkk.entity.Restoran;
+import com.its.fppbkk.entity.Tag;
 
 @Repository
 public class RestoranDAOImpl implements RestoranDAO {
@@ -47,7 +49,30 @@ public class RestoranDAOImpl implements RestoranDAO {
 		
 		return theResto;
 	}
-
+	
+	@Override
+	public List<Menu> getMenuRestoran(int restoID){
+		Session currSession = sessionFactory.getCurrentSession();
+		
+		Restoran theResto = currSession.get(Restoran.class, restoID);
+		
+		List<Menu> theMenu = theResto.getMenus();
+		
+		return theMenu;
+	}
+	
+	@Override
+	public List<Tag> getTagRestoran(int restoID){
+		Session currSession = sessionFactory.getCurrentSession();
+		
+		Restoran theResto = currSession.get(Restoran.class, restoID);
+		
+		List<Tag> theTag = theResto.getTags();
+		
+		return theTag;
+	}
+	
+	
 	@Override
 	public void deleteRestoran(int restoID) {
 		// TODO Auto-generated method stub

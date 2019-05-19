@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.its.fppbkk.dao.RestoranDAO;
+import com.its.fppbkk.entity.Menu;
 import com.its.fppbkk.entity.Restoran;
+import com.its.fppbkk.entity.Tag;
 
 @Service
 public class RestoranServiceImpl implements RestoranService {
@@ -44,5 +46,16 @@ public class RestoranServiceImpl implements RestoranService {
 
 	}
 
+	@Override
+	@Transactional
+	public List<Menu> getMenuRestoran(int restoID){
+		return restoranDAO.getMenuRestoran(restoID);
+	}
+	
+	@Override
+	@Transactional
+	public List<Tag> getTagRestoran(int restoID){
+		return restoranDAO.getTagRestoran(restoID);
+	}
 
 }

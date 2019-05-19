@@ -39,10 +39,10 @@ public class Restoran {
 	@Column(name="Resto_Budget_Max")
 	private int restoBudgetMax;
 	
-	@OneToMany(mappedBy="restoran")
+	@OneToMany(fetch=FetchType.EAGER,mappedBy="restoran")
 	private List<Menu> menus;
 	
-	@ManyToMany(fetch=FetchType.LAZY,cascade= {CascadeType.DETACH, CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+	@ManyToMany(fetch=FetchType.EAGER,cascade= {CascadeType.DETACH, CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
 	@JoinTable(name="resto_tag", joinColumns=@JoinColumn(name="resto_id"), inverseJoinColumns = @JoinColumn(name="tag_id"))
 	private List<Tag> tags;
 	

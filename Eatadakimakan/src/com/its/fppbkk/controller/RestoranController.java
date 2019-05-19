@@ -8,7 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.its.fppbkk.entity.Menu;
 import com.its.fppbkk.entity.Restoran;
+import com.its.fppbkk.entity.Tag;
 import com.its.fppbkk.service.RestoranService;
 
 @Controller
@@ -26,6 +28,21 @@ public class RestoranController {
 		myModel.addAttribute("resto",resto);
 		
 		return "restoran/listall";
+	}
+	
+	@GetMapping("/details")
+	public String getDetails(Model myModel) {
+		
+		int restoID = 1;
+		
+		Restoran restoku = restoranService.getRestoranByID(restoID);
+		List<Menu> menuku = restoranService.getMenuRestoran(restoID);
+		List<Tag> tagku = restoranService.getTagRestoran(restoID);
+		myModel.addAttribute("resto", restoku);
+		myModel.addAttribute("menuku", menuku);
+		myModel.addAttribute("tagku", tagku);
+		
+		return "restoran/restaurantinfo";
 	}
 
 }

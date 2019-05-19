@@ -20,7 +20,7 @@ public class Menu {
 	@Column(name="ID")
 	private int restoID;
 	
-	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="Resto_ID")
 	private Restoran restoran;
 	

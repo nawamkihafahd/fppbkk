@@ -26,4 +26,11 @@ public class MainController {
 		return "add_restaurant";
 	}
 	
+	@RequestMapping("/search")
+	public String searchResto() {
+		return "search";
+	}
+	
+	
+	
 }
