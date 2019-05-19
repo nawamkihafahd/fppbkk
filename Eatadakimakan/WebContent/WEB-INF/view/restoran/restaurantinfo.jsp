@@ -8,7 +8,7 @@
 <title>Resto Here</title>
 </head>
 <body>
-<h1>${restoku.restoNama} 
+<h1>${resto.restoNama} 
 </h1>
 ${resto.restoDaerah} <br>
 ${resto.restoAlamat}<br>

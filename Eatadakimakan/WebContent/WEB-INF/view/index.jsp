@@ -66,7 +66,7 @@
         <h2 class="my-4 eat-block-clear">Eatadakimakan</h2>
         <div class="list-group">
           <a href="#" class="list-group-item font-brown">Recommended</a>
-          <a href="#" class="list-group-item font-brown">Randomizer</a>
+          <a href="/Eatadakimakan/restoran/random" class="list-group-item font-brown">Randomizer</a>
           <a href="#" class="list-group-item font-brown">History</a>
         </div>
 
