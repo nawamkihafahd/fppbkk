@@ -28,7 +28,7 @@ public class MenuDAOImpl implements MenuDAO {
 		// TODO Auto-generated method stub
 		Session currSession = sessionFactory.getCurrentSession();
 		
-		Query<Menu> kueri = currSession.createQuery("from menu", Menu.class);
+		Query<Menu> kueri = currSession.createQuery("from Menu", Menu.class);
 		
 		List<Menu> menus = kueri.getResultList();
 		
@@ -60,7 +60,7 @@ public class MenuDAOImpl implements MenuDAO {
 		// TODO Auto-generated method stub
 		Session currSession = sessionFactory.getCurrentSession();
 		
-		Query kueri = currSession.createQuery("delete from menu where ID=mnID");
+		Query kueri = currSession.createQuery("delete from Menu where ID=mnID");
 		kueri.setParameter("mnID", menuID);
 		
 		kueri.executeUpdate();

@@ -3,11 +3,13 @@ package com.its.fppbkk.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.its.fppbkk.dao.RestoranDAO;
 import com.its.fppbkk.entity.Restoran;
 
+@Service
 public class RestoranServiceImpl implements RestoranService {
 
 	@Autowired

@@ -22,7 +22,7 @@ public class RestoranDAOImpl implements RestoranDAO {
 		
 		Session currSession = sessionFactory.getCurrentSession();
 		
-		Query<Restoran> kueri = currSession.createQuery("from restoran", Restoran.class);
+		Query<Restoran> kueri = currSession.createQuery("from Restoran", Restoran.class);
 		
 		List<Restoran> restoran = kueri.getResultList();
 		
@@ -53,7 +53,7 @@ public class RestoranDAOImpl implements RestoranDAO {
 		// TODO Auto-generated method stub
 		Session currSession = sessionFactory.getCurrentSession();
 		
-		Query kueri = currSession.createQuery("delete from restoran where ID:=restoranID");
+		Query kueri = currSession.createQuery("delete from Restoran where ID:=restoranID");
 		kueri.setParameter("restoranID", restoID);
 		
 		kueri.executeUpdate();
