@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +13,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Eatadakimakan-Add Restaurant</title>
+  <title>Eatadakimakan Search Restaurant</title>
 
   <!-- Custom fonts for this template-->
   <link href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"/>" rel="stylesheet" type="text/css">
@@ -28,29 +29,31 @@
 
   <div class="container">
     <div class="card card-register mx-auto mt-5">
-      <div class="card-header">Tambahkan Restoran</div>
+      <div class="card-header">Cari Restoran</div>
       <div class="card-body">
-        <form>
+      	<form:form action="searchresult" method="post">
+      		
           <div class="form-group">
                 <div class="form-label-group">
-                  <input type="text" id="budget" class="form-control" placeholder=" " required="required" autofocus="autofocus">
-                  <label for="namaRestoran">Budget</label>
+                  <input type="text" name="budget" class="form-control" placeholder=" " required="required" autofocus="autofocus"/>
+                  <label for="budget">Budget</label>
                 </div>
           </div>
           <div class="form-group">
            <div class="form-label-group">
-                  <input type="text" id="location" class="form-control" placeholder=" ">
-                  <label for="alamatRestoran">Lokasi</label>
+                  <input type="text" name="location" class="form-control" placeholder=" "/>
+                  <label for="location">Lokasi</label>
                 </div>
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="text" id="tag" class="form-control" placeholder=" ">
-              <label for="jenisMakanan">Tag</label>
+              <input type="text" name="tag" class="form-control" placeholder=" "/>
+              <label for="tag">Tag</label>
             </div>
           </div>
-          <a class="btn btn-primary btn-block" href="">Cari</a>
-        </form>
+          <button type="submit" class="btn btn-primary btn-block" value="submit">Cari Restoran</button>
+          
+      	</form:form>
       </div>
     </div>
   </div>

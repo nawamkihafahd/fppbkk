@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+abc
+Budget: "${budget}"
+Location: "${location}"
+Tag: "${tag}"
 </body>
 </html>

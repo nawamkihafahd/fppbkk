@@ -1,6 +1,9 @@
 package com.its.fppbkk.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -30,10 +33,18 @@ public class MainController {
 	public String searchResto() {
 		return "search";
 	}
-	@RequestMapping("searchrestauranform")
+	@RequestMapping("/searchrestauranform")
 	public String search_resto_form() {
-		return "searchrestauranform";
+		return "searchrestaurantform";
 	}
-	
-	
+	@RequestMapping("/searchresult")
+	public String search_result(HttpServletRequest request, Model model) {
+		String budget = request.getParameter("budget");
+		model.addAttribute("budget", budget);
+		String location = request.getParameter("location");
+		model.addAttribute("location", location);
+		String tag = request.getParameter("tag");
+		model.addAttribute("tag", tag);
+		return "searchresult";
+	}
 }
