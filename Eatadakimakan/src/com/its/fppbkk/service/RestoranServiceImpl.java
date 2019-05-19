@@ -2,23 +2,16 @@ package com.its.fppbkk.service;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.its.fppbkk.dao.MenuDAO;
 import com.its.fppbkk.dao.RestoranDAO;
 import com.its.fppbkk.entity.Restoran;
 
-@Service
-public class EatadakimakanServiceImpl implements EatadakimakanService {
+public class RestoranServiceImpl implements RestoranService {
 
 	@Autowired
 	private RestoranDAO restoranDAO;
-	
-	@Autowired
-	private MenuDAO menuDAO;
 	
 	@Override
 	@Transactional
@@ -48,5 +41,6 @@ public class EatadakimakanServiceImpl implements EatadakimakanService {
 		restoranDAO.deleteRestoran(restoID);
 
 	}
+
 
 }

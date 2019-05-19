@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.its.fppbkk.entity.Restoran;
 
-public interface EatadakimakanService {
+public interface RestoranService {
 	
 	public List<Restoran> getRestoran();
 	
