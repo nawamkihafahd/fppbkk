@@ -33,19 +33,19 @@
         <form>
           <div class="form-group">
                 <div class="form-label-group">
-                  <input type="text" id="budget" class="form-control" placeholder="" required="required" autofocus="autofocus">
+                  <input type="text" id="budget" class="form-control" placeholder=" " required="required" autofocus="autofocus">
                   <label for="namaRestoran">Budget</label>
                 </div>
           </div>
           <div class="form-group">
            <div class="form-label-group">
-                  <input type="text" id="location" class="form-control" placeholder="">
+                  <input type="text" id="location" class="form-control" placeholder=" ">
                   <label for="alamatRestoran">Lokasi</label>
                 </div>
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="text" id="tag" class="form-control" placeholder="">
+              <input type="text" id="tag" class="form-control" placeholder=" ">
               <label for="jenisMakanan">Tag</label>
             </div>
           </div>
