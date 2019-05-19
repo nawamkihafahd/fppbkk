@@ -18,9 +18,9 @@ public class Menu {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID")
-	private int restoID;
+	private int id;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="Resto_ID")
 	private Restoran restoran;
 	
@@ -30,8 +30,7 @@ public class Menu {
 	@Column(name="Menu_Harga")
 	private int menuHarga;
 
-	public Menu(Restoran restoran, String menuNama, int menuHarga) {
-		this.restoran = restoran;
+	public Menu(String menuNama, int menuHarga) {
 		this.menuNama = menuNama;
 		this.menuHarga = menuHarga;
 	}
@@ -43,12 +42,12 @@ public class Menu {
 
 
 
-	public int getRestoID() {
-		return restoID;
+	public int getid() {
+		return id;
 	}
 
-	public void setRestoID(int restoID) {
-		this.restoID = restoID;
+	public void setid(int id) {
+		this.id = id;
 	}
 
 	public Restoran getRestoran() {

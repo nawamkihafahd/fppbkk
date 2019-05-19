@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.its.fppbkk.entity.Menu;
 import com.its.fppbkk.entity.Restoran;
 import com.its.fppbkk.entity.Tag;
+import com.its.fppbkk.service.MenuService;
 import com.its.fppbkk.service.RestoranService;
 
 @Controller
@@ -19,6 +20,9 @@ public class RestoranController {
 	
 	@Autowired
 	private RestoranService restoranService;
+	
+	@Autowired
+	private MenuService menuService;
 	
 	@GetMapping("/listall")
 	public String getAll(Model myModel) {
@@ -36,7 +40,7 @@ public class RestoranController {
 		int restoID = 1;
 		
 		Restoran restoku = restoranService.getRestoranByID(restoID);
-		List<Menu> menuku = restoranService.getMenuRestoran(restoID);
+		List<Menu> menuku = menuService.getMenuRestoran(restoID);
 		List<Tag> tagku = restoranService.getTagRestoran(restoID);
 		myModel.addAttribute("resto", restoku);
 		myModel.addAttribute("menuku", menuku);

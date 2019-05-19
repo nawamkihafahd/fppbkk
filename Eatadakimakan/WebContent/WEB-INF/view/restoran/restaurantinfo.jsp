@@ -10,8 +10,8 @@
 <body>
 <h1>${restoku.restoNama} 
 </h1>
-${restoku.restoDaerah} <br>
-${restoku.restoAlamat}<br>
+${resto.restoDaerah} <br>
+${resto.restoAlamat}<br>
 
 <c:forEach var="tempTag" items="${tagku}"> 
 ${tempTag.tagNama}<br>

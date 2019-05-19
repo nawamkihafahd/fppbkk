@@ -78,7 +78,7 @@ public class RestoranDAOImpl implements RestoranDAO {
 		// TODO Auto-generated method stub
 		Session currSession = sessionFactory.getCurrentSession();
 		
-		Query kueri = currSession.createQuery("delete from Restoran where ID:=restoranID");
+		Query kueri = currSession.createQuery("delete from Restoran where ID=:restoranID");
 		kueri.setParameter("restoranID", restoID);
 		
 		kueri.executeUpdate();

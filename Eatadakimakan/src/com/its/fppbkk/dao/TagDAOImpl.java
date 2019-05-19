@@ -52,7 +52,7 @@ public class TagDAOImpl implements TagDAO {
 		// TODO Auto-generated method stub
 		Session currSession = sessionFactory.getCurrentSession();
 		
-		Query kueri = currSession.createQuery("delete from Tag where ID:=tID");
+		Query kueri = currSession.createQuery("delete from Tag where ID=:tID");
 		kueri.setParameter("tID", tagID);
 		
 		kueri.executeUpdate();

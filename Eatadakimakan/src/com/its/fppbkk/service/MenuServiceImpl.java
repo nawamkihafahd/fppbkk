@@ -46,5 +46,11 @@ public class MenuServiceImpl implements MenuService {
 		menuDAO.deleteMenu(menuID);
 
 	}
+	
+	@Override
+	@Transactional
+	public List<Menu> getMenuRestoran(int restoID){
+		return menuDAO.getMenuRestoran(restoID);
+	}
 
 }

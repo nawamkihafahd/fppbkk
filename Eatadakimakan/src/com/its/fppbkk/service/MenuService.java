@@ -13,5 +13,7 @@ public interface MenuService {
 	public Menu getMenuByID(int menuID);
 	
 	public void deleteMenu(int menuID);
+	
+	public List<Menu> getMenuRestoran(int restoID);
 
 }

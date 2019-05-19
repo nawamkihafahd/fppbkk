@@ -39,7 +39,7 @@ public class Restoran {
 	@Column(name="Resto_Budget_Max")
 	private int restoBudgetMax;
 	
-	@OneToMany(fetch=FetchType.EAGER,mappedBy="restoran")
+	@OneToMany(mappedBy="restoran")
 	private List<Menu> menus;
 	
 	@ManyToMany(fetch=FetchType.EAGER,cascade= {CascadeType.DETACH, CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
