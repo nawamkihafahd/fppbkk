@@ -30,7 +30,10 @@ public class MainController {
 	public String searchResto() {
 		return "search";
 	}
-	
+	@RequestMapping("searchrestauranform")
+	public String search_resto_form() {
+		return "searchrestauranform";
+	}
 	
 	
 }
