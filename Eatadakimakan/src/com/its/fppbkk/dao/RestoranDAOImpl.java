@@ -50,16 +50,6 @@ public class RestoranDAOImpl implements RestoranDAO {
 		return theResto;
 	}
 	
-	@Override
-	public List<Menu> getMenuRestoran(int restoID){
-		Session currSession = sessionFactory.getCurrentSession();
-		
-		Restoran theResto = currSession.get(Restoran.class, restoID);
-		
-		List<Menu> theMenu = theResto.getMenus();
-		
-		return theMenu;
-	}
 	
 	@Override
 	public List<Tag> getTagRestoran(int restoID){

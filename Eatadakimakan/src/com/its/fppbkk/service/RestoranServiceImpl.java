@@ -45,12 +45,6 @@ public class RestoranServiceImpl implements RestoranService {
 		restoranDAO.deleteRestoran(restoID);
 
 	}
-
-	@Override
-	@Transactional
-	public List<Menu> getMenuRestoran(int restoID){
-		return restoranDAO.getMenuRestoran(restoID);
-	}
 	
 	@Override
 	@Transactional

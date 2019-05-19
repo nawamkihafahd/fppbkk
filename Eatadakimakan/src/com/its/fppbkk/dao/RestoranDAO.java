@@ -16,7 +16,5 @@ public interface RestoranDAO {
 	
 	public void deleteRestoran(int restoID);
 	
-	public List<Menu> getMenuRestoran(int restoID);
-	
 	public List<Tag> getTagRestoran(int restoID);
 }
