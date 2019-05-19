@@ -21,14 +21,18 @@ USE `eatadakimakan`;
 DROP TABLE IF EXISTS `menu`;
 
 CREATE TABLE `menu` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Resto_ID` int(11) DEFAULT NULL,
   `Menu_Nama` varchar(50) DEFAULT NULL,
   `Menu_Harga` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
   KEY `Resto_ID` (`Resto_ID`),
   CONSTRAINT `menu_ibfk_1` FOREIGN KEY (`Resto_ID`) REFERENCES `restoran` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `menu` */
+
+insert  into `menu`(`ID`,`Resto_ID`,`Menu_Nama`,`Menu_Harga`) values (1,1,'Pecel',10000),(2,1,'Rawon',11000);
 
 /*Table structure for table `resto_tag` */
 
@@ -45,6 +49,8 @@ CREATE TABLE `resto_tag` (
 
 /*Data for the table `resto_tag` */
 
+insert  into `resto_tag`(`Resto_ID`,`Tag_ID`) values (1,1),(1,2);
+
 /*Table structure for table `restoran` */
 
 DROP TABLE IF EXISTS `restoran`;
@@ -57,9 +63,11 @@ CREATE TABLE `restoran` (
   `Resto_Budget_Min` int(11) DEFAULT NULL,
   `Resto_Budget_Max` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 /*Data for the table `restoran` */
+
+insert  into `restoran`(`ID`,`Resto_Nama`,`Resto_Daerah`,`Resto_Alamat`,`Resto_Budget_Min`,`Resto_Budget_Max`) values (1,'Pecel Cak Tikno','Keputih','Pertigaan Keputih',7000,50000);
 
 /*Table structure for table `tag` */
 
@@ -69,9 +77,11 @@ CREATE TABLE `tag` (
   `ID` int(10) NOT NULL AUTO_INCREMENT,
   `Tag_Nama` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tag` */
+
+insert  into `tag`(`ID`,`Tag_Nama`) values (1,'Indonesian'),(2,'Editor\'s Choice');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
