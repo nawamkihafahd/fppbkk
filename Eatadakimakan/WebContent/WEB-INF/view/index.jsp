@@ -28,7 +28,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-       <a class="navbar-brand" href="#">>Username Here< </a> 
+       <a class="navbar-brand" href="#">EATADAKIMAKAN</a> 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -40,19 +40,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./add_restaurant">Add Restaurant</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="./restoran/searchrestauranform">Search</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
           </li>
         </ul>
       </div>
@@ -63,22 +51,12 @@
   <div class="container">
 
     <div class="row">
-
-      <div class="col-lg-3">
-
-        <h2 class="my-4 eat-block-clear">Eatadakimakan</h2>
-        <div class="list-group">
-          <a href="#" class="list-group-item font-brown">Recommended</a>
-          <a href="/Eatadakimakan/restoran/random" class="list-group-item font-brown">Randomizer</a>
-          <a href="#" class="list-group-item font-brown">History</a>
-        </div>
-
-      </div>
-      <!-- /.col-lg-3 -->
-
-      <div class="col-lg-9">
-
-        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+    	
+    	<div class= "col-2"></div>
+        
+    	<div class= "col-8">
+        
+        <div id="carouselExampleIndicators " class="mx-auto carousel slide py-3" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -105,110 +83,16 @@
           </a>
         </div>
 
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="<c:url value="/resources/img/gado-item.jpg"/>" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#"class="font-brown">Gado-Gado</a>
-                </h4>
-                <h5>Rp 12.000</h5>
-                <p class="card-text">Gado-gado Khas Jakarta!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="<c:url value="/resources/img/geprek-item.jpg"/>" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#"class="font-brown">Ayam Geprek</a>
-                </h4>
-                <h5>Rp 14.000</h5>
-                <p class="card-text">Ayam Geprek Pedas! Tersedia dalam berbagai level</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="<c:url value="/resources/img/nasgor-item.jpg"/>" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#"class="font-brown">Nasi Goreng</a>
-                </h4>
-                <h5>Rp 14.000</h5>
-                <p class="card-text">Nasi Goreng dengan berbagai varian: ayam,sosis, kambing, cumi dll.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="<c:url value="/resources/img/padang-item.jpg"/>" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#"class="font-brown">Nasi Padang</a>
-                </h4>
-                <h5>Rp 13.000</h5>
-                <p class="card-text">Tersedia berbagai macam Lauk</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="<c:url value="/resources/img/sate-item.jpg"/>" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#"class="font-brown">Sate Kambing</a>
-                </h4>
-                <h5>Rp 18.000</h5>
-                <p class="card-text">Sata Kambing Khas Madura.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="<c:url value="/resources/img/soto-item.jpg"/>" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#"class="font-brown">Soto Ayam</a>
-                </h4>
-                <h5>Rp 12.000</h5>
-                <p class="card-text">Soto Ayam segar Khas Lamongan</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
+		<div class="container">        
+        <div class ="card card-register mx-auto m-5 p-5">
+        <a href="#" class="btn btn-primary btn-block " role="button">Recommend ME!n</a>
+        <div class="card-header text-center">OR</div>
+        <a href="#" class="btn btn-primary btn-block " role="button">SEARCH</a>
         </div>
-        <!-- /.row -->
-
-      </div>
-      <!-- /.col-lg-9 -->
-
+        </div>
+        </div>
+        
+    	<div class= "col-2"></div>
     </div>
     <!-- /.row -->
 
