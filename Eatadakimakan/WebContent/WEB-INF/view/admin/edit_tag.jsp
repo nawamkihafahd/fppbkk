@@ -25,11 +25,17 @@
 
 </head>
 <body class="own-custom-res-bg">
-<div class="container own-white-bg">
-  <h2> Edit ${restoku.restoNama } Tag </h2>
-  <p>Manage Your Tag</p> 
+<div class="container mt-5">
+	<div class="card">
+      <div class="card-header"> 
+      <h2>Edit ${restoku.restoNama } Tag</h2>
+      <br> 
+      <p>Manage Your Tag</p>
+      </div>
+      <div class="card-body">
+  
 
-        
+   
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -67,7 +73,8 @@
 				   onclick="window.location.href='panel'; return false;"
 				   class="btn btn-primary btn-lg"
  		 />
-  
+  </div>
+  </div>
 </div>
 
 <script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>

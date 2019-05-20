@@ -28,7 +28,11 @@
 
 <body class="own-custom-res-bg">
 
-<div class="container own-white-bg">
+<div class="container mt-5">
+	<div class="card">
+      <div class="card-header"> 
+      </div>
+      <div class="card-body">
 	<div class="row">
 		<div class="col-lg-3"></div>
 		<div class="col-lg-6">
@@ -44,6 +48,8 @@
 
 		</div>	
 		<div class="col-lg-3"></div>
+	</div>
+	</div>
 	</div>
 </div>
 <script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>

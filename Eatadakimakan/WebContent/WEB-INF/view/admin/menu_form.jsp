@@ -27,7 +27,11 @@
 </head>
 <body class="own-custom-res-bg">
 
-<div class="container own-white-bg">
+<div class="container mt-5">
+	<div class="card">
+      <div class="card-header"> 
+      </div>
+      <div class="card-body">
  	<c:url var="saveMenu" value="/admin/saveMenu">
 		<c:param name="restoID" value="${restoID}" />
 	</c:url>
@@ -68,6 +72,8 @@
 				   class="btn btn-primary btn-lg"
  		 />		
 		
+		</div>
+		</div>
 		</div>
 		
 <script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>

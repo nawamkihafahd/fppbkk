@@ -25,9 +25,14 @@
 
 </head>
 <body class="own-custom-res-bg">
-<div class="container own-white-bg">
-  <h2> ${restoku.restoNama} </h2>
+<div class="container mt-5">
+	<div class="card">
+      <div class="card-header"> 
+      <h2> ${restoku.restoNama} </h2>
   <p>Manage Your Menu</p> 
+      </div>
+      <div class="card-body">
+  
   
   <c:url var="addMenuLink" value="/admin/showFormForAddMenu">
 		<c:param name="restoID" value="${restoku.id}" />
@@ -86,7 +91,8 @@
 				   class="btn btn-primary btn-lg"
  		 />
  		 
-  
+  </div>
+  </div>
 </div>
 
 <script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>

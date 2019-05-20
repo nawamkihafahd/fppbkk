@@ -25,9 +25,14 @@
 
 </head>
 <body class="own-custom-res-bg">
-<div class="container own-white-bg">
-  <h2>Manage Restaurant</h2>
-  <p>Manage Your Restaurant</p> 
+<div class="container mt-5">
+	<div class="card">
+      <div class="card-header"> 
+        <h2>Manage Restaurant</h2>
+  <p>Manage Your Restaurant</p>
+      </div>
+      <div class="card-body">
+ 
   <input type="button" value="Add Restaurant"
 				   onclick="window.location.href='showFormForAdd'; return false;"
 				   class="btn btn-primary btn-lg"
@@ -101,6 +106,8 @@
 				   onclick="window.location.href='panel'; return false;"
 				   class="btn btn-primary btn-lg"
  		 />
+ 		 </div>
+ 		 </div>
 </div>
 
 
