@@ -45,8 +45,8 @@
 			
 
 <!-- 					construct an "delete" link with customer id -->
-	<c:url var="deleteLink" value="/admin/deleterestaurant">
-		<c:param name="menuID" value="${tempTag.id}" />
+	<c:url var="deleteLink" value="/admin/deleteTag">
+		<c:param name="tagID" value="${tempTag.id}" />
 	</c:url>					
 	
 	
@@ -56,7 +56,7 @@
         <td>${tempTag.tagNama}</td>
         <td>
 			<a href="${deleteLink}"
-			   onclick="if (!(confirm('Are you sure you want to delete this menu?'))) return false">Delete</a>
+			   onclick="if (!(confirm('Are you sure you want to delete this tag?'))) return false">Delete</a>
 		</td>
       </tr>
     </c:forEach>

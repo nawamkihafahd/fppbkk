@@ -49,15 +49,13 @@
 	<!-- construct an "update" link with customer id -->
 	<c:url var="editLink" value="/admin/editrestaurant">
 		<c:param name="menuID" value="${tempMenu.id}" />
+		<c:param name="restoID" value="${restoku.id}" />
 	</c:url>
 	
-	<c:url var="manageMenuLink" value="/admin/managemenu">
-		<c:param name="menuID" value="${tempMenu.id}" />
-	</c:url>					
-
 <!-- 					construct an "delete" link with customer id -->
 	<c:url var="deleteLink" value="/admin/deleterestaurant">
 		<c:param name="menuID" value="${tempMenu.id}" />
+		<c:param name="restoID" value="${restoku.id}" />
 	</c:url>					
 	
 	
@@ -67,9 +65,7 @@
         <td>${tempMenu.menuNama}</td>
         <td>${tempMenu.menuHarga}</td>
         <td>
-			<a href="${updateLink}">Update</a>
-			|
-			<a href="${manageMenuLink}">Manage Menu</a>
+			<a href="${editLink}">Edit</a>
 			|
 			<a href="${deleteLink}"
 			   onclick="if (!(confirm('Are you sure you want to delete this menu?'))) return false">Delete</a>

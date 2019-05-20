@@ -76,12 +76,5 @@ public class TagDAOImpl implements TagDAO {
 		return tags1;
 	}
 
-	@Override
-	public List<Tag> getTagNot(int restoID) {
-		// TODO Auto-generated method stub
-		Session currSession = sessionFactory.getCurrentSession();
-
-		return null;
-	}
 
 }

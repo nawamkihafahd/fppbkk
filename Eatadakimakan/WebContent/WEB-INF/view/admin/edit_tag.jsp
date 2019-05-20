@@ -26,11 +26,8 @@
 <div class="container">
   <h2> Edit ${restoku.restoNama } Tag </h2>
   <p>Manage Your Tag</p> 
-  
-  <input type="button" value="Add Tag"
-				   onclick="window.location.href='showFormForAddTag'; return false;"
-				   class="btn btn-primary btn-lg"
-  />          
+
+        
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -45,8 +42,9 @@
 			
 
 <!-- 					construct an "delete" link with customer id -->
-	<c:url var="deleteLink" value="/admin/deleterestaurant">
-		<c:param name="menuID" value="${tempTag.id}" />
+	<c:url var="addTagLink" value="/admin/addRestoTag">
+		<c:param name="restoID" value="${restoku.id}" />
+		<c:param name="tagID" value="${tempTag.id}" />
 	</c:url>					
 	
 	
@@ -55,8 +53,8 @@
         <td>${tempTag.id}</td>
         <td>${tempTag.tagNama}</td>
         <td>
-			<a href="${deleteLink}"
-			   onclick="if (!(confirm('Are you sure you want to delete this menu?'))) return false">Delete</a>
+			<a href="${addTagLink}"
+			   onclick="if (!(confirm('Are you sure you want to add this tag?'))) return false" method="">Add</a>
 		</td>
       </tr>
     </c:forEach>

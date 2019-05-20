@@ -16,6 +16,5 @@ public interface TagDAO {
 	
 	public List<Tag> getTagIn(int restoID);
 	
-	public List<Tag> getTagNot(int restoID);
 
 }

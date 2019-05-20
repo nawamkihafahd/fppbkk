@@ -15,7 +15,5 @@ public interface TagService {
 	public void deleteTag(int tagID);
 	
 	public List<Tag> getTagIn(int restoID);
-	
-	public List<Tag> getTagNot(int restoID);
 
 }

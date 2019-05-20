@@ -102,6 +102,18 @@ public class AdminController {
 		return "/admin/menu_form";
 	}
 	
+	@GetMapping("/showFormForEditMenu")
+	public String editMenu(@ModelAttribute("restoID") int theRestoID,@ModelAttribute("menuID")int menuID ,Model theModel){
+	
+		Menu menuku = menuService.getMenuByID(menuID);
+		
+		theModel.addAttribute("restoID", theRestoID);
+		
+		theModel.addAttribute("menuku", menuku);
+		
+		return "/admin/menu_form";
+	}
+	
 	@PostMapping("/saveResto")
 	public String saveRestaurant(@ModelAttribute("restoku") Restoran resto) {
 		
@@ -130,6 +142,16 @@ public class AdminController {
 		restoranService.deleteRestoran(theID);
 		
 		return "redirect:/admin/managerestaurant";
+	}
+	
+	@GetMapping("/deleteMenu")
+	public String deleteMenu(@ModelAttribute("menuID")int theID,@ModelAttribute("restoID")int restoID,Model model) {
+		
+		menuService.deleteMenu(theID);
+		
+		model.addAttribute("restoranID",restoID);
+		
+		return "redirect:/admin/managemenu";
 	}
 	
 	@GetMapping("/showFormForAddTag")
@@ -161,5 +183,28 @@ public class AdminController {
 		myModel.addAttribute("tagIn", tagku);
 		
 		return "/admin/edit_tag";
+	}
+	
+	@GetMapping("/addRestoTag")
+	public String addRestoTag(@ModelAttribute("restoID")int theResID,@ModelAttribute("tagID")int theTagID,Model model) {
+		
+		Restoran resto = restoranService.getRestoranByID(theResID);
+		Tag tag = tagService.getTagByID(theTagID);
+		
+		resto.addTag(tag);
+		
+		restoranService.saveRestoran(resto);
+		
+		model.addAttribute("restoranID", theResID);
+		
+		return "redirect:/admin/editRestoTag";
+	}
+	
+	@GetMapping("/deleteTag")
+	public String deleteTag(@ModelAttribute("tagID")int tagID) {
+		
+		tagService.deleteTag(tagID);
+		
+		return "redirect:/admin/managetag";
 	}
 }
