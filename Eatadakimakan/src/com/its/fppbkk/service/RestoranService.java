@@ -17,4 +17,6 @@ public interface RestoranService {
 	public void deleteRestoran(int restoID);
 
 	public List<Tag> getTagRestoran(int restoID);
+	
+	public List<Restoran> getRestoranByBudget(int budget);
 }

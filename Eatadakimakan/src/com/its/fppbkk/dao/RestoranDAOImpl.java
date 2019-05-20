@@ -74,5 +74,15 @@ public class RestoranDAOImpl implements RestoranDAO {
 		kueri.executeUpdate();
 
 	}
+	
+	public List<Restoran> getRestoranByBudget(int budget)
+	{
+		Session currSession = sessionFactory.getCurrentSession();
+		Query<Restoran> kueri = currSession.createQuery("from Restoran where Resto_Budget_Min<=:restoranbudget and Resto_Budget_Max>=:restoranbudget", Restoran.class);
+		kueri.setParameter("restoranbudget", budget);
+		
+		List<Restoran> restorans = kueri.getResultList();
+		return restorans;
+	}
 
 }

@@ -51,5 +51,11 @@ public class RestoranServiceImpl implements RestoranService {
 	public List<Tag> getTagRestoran(int restoID){
 		return restoranDAO.getTagRestoran(restoID);
 	}
-
+	
+	@Override
+	@Transactional
+	public List<Restoran> getRestoranByBudget(int budget)
+	{
+		return restoranDAO.getRestoranByBudget(budget);
+	}
 }

@@ -35,7 +35,7 @@
       		
           <div class="form-group">
                 <div class="form-label-group">
-                  <input type="text" name="budget" class="form-control" placeholder=" " required="required" autofocus="autofocus"/>
+                  <input type="number" name="budget" class="form-control" placeholder=" " required="required" autofocus="autofocus"/>
                   <label for="budget">Budget</label>
                 </div>
           </div>
@@ -44,12 +44,6 @@
                   <input type="text" name="location" class="form-control" placeholder=" "/>
                   <label for="location">Lokasi</label>
                 </div>
-          </div>
-          <div class="form-group">
-            <div class="form-label-group">
-              <input type="text" name="tag" class="form-control" placeholder=" "/>
-              <label for="tag">Tag</label>
-            </div>
           </div>
           <button type="submit" class="btn btn-primary btn-block" value="submit">Cari Restoran</button>
           

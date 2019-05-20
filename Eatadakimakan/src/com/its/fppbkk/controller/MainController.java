@@ -1,13 +1,23 @@
 package com.its.fppbkk.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.its.fppbkk.entity.Restoran;
+import com.its.fppbkk.service.RestoranService;
+import com.its.fppbkk.service.RestoranServiceImpl;
+
 @Controller
 public class MainController {
+	
+	@Autowired
+	private RestoranService restoranService;
 	
 	@RequestMapping("/")
 	public String Home() {
@@ -40,11 +50,9 @@ public class MainController {
 	@RequestMapping("/searchresult")
 	public String search_result(HttpServletRequest request, Model model) {
 		String budget = request.getParameter("budget");
-		model.addAttribute("budget", budget);
 		String location = request.getParameter("location");
-		model.addAttribute("location", location);
-		String tag = request.getParameter("tag");
-		model.addAttribute("tag", tag);
+		List<Restoran> resto= restoranService.getRestoranByBudget(Integer.parseInt(budget));
+		model.addAttribute("resto",resto);
 		return "searchresult";
 	}
 }
