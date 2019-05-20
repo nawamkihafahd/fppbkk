@@ -35,18 +35,18 @@
       		
           <div class="form-group">
                 <div class="form-label-group">
-                  <input type="number" name="budget" class="form-control" placeholder=" " required="required" autofocus="autofocus"/>
+                  <input type="number" name="budget" class="form-control" placeholder="Budget" required="required" autofocus="autofocus"/>
                   <label for="budget">Budget</label>
                 </div>
           </div>
           <div class="form-group">
            <div class="form-label-group">
-                  <input type="text" name="location" class="form-control" placeholder=" "/>
+                  <input type="text" name="location" class="form-control" placeholder="Lokasi"/>
                   <label for="location">Lokasi</label>
                 </div>
           </div>
-          <button type="submit" class="btn btn-primary btn-block" value="submit">Cari Restoran</button>
-          
+          <button type="submit" class="btn btn-primary btn-block" value="submit" name="submit">Cari Restoran</button>
+          <button type="submit" class="btn btn-primary btn-block" value="random" name="random">Search and Randomize</button>
       	</form:form>
       </div>
     </div>
