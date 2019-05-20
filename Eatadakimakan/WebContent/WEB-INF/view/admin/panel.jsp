@@ -25,6 +25,7 @@
   <link href="<c:url value="/resources/css/custom.css"/>" rel="stylesheet">
 
 </head>
+
 <body class="own-custom-res-bg">
 
 <div class="container own-white-bg">
@@ -40,9 +41,7 @@
   			/>
   			
   			<input type="button" value="Manage Tag"
-				   onclick="window.location.href='managetag'; return false;"
-				   class="btn btn-primary btn-block"
-  			/>
+
   		</div>
   		<div class="row">
   			

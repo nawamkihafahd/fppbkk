@@ -53,7 +53,7 @@
 		
 		<div class = "container bg-dark m-3">
 		
-        <h2 class="my-4 eat-block-clear">${resto.restoNama}</h2>
+        <h2 class="my-4 eat-block-clear">Budget: ${resto.restoBudgetMin}</h2>
         <div class = "container pb-2">
         <ul class="list-group">
         	<li class="list-group-item list-group-item-info"> ${resto.restoDaerah} </li>
