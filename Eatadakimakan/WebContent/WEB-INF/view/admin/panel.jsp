@@ -32,27 +32,19 @@
 	<div class="row">
 		<div class="col-lg-3"></div>
 		<div class="col-lg-6">
-			<div class="row"></div>
-		
-  		<div class="row">
-  			<input type="button" value="Manage Restaurant"
+		<input type="button" value="Manage Restaurant"
 				   onclick="window.location.href='managerestaurant'; return false;"
 				   class="btn btn-primary btn-block"
   			/>
-  			
-  			<input type="button" value="Manage Tag"
+  			<br>
+  		<input type="button" value="Manage Tag"
+			   onclick="window.location.href='managetag'; return false;"
+			   class="btn btn-primary btn-block"
+  		/>
 
-  		</div>
-  		<div class="row">
-  			
-  		</div>
-<!-- 			<button href="managerestaurant" type="button" class="btn btn-primary btn-block" >Manage Restaurant</button> -->
-<!-- 			<br> -->
-<!-- 			<button href="managetag" type="button" class="btn btn-primary btn-block" >Manage Tags</button> -->
 		</div>	
 		<div class="col-lg-3"></div>
 	</div>
-
 </div>
 <script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>
   <script src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
