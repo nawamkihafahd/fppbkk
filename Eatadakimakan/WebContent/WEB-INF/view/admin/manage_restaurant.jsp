@@ -78,7 +78,7 @@
         	</c:forEach>
         </td>
         <td>
-			<a href="${updateLink}">Update</a>
+			<a href="${editLink}">Edit</a>
 			|
 			<a href="${manageMenuLink}">Manage Menu</a>
 			|
