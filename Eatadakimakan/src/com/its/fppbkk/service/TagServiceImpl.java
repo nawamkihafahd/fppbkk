@@ -45,4 +45,18 @@ public class TagServiceImpl implements TagService {
 
 	}
 
+	@Override
+	@Transactional
+	public List<Tag> getTagIn(int restoID) {
+		// TODO Auto-generated method stub
+		return tagDAO.getTagIn(restoID);
+	}
+
+	@Override
+	@Transactional
+	public List<Tag> getTagNot(int restoID) {
+		// TODO Auto-generated method stub
+		return tagDAO.getTagNot(restoID);
+	}
+
 }

@@ -1,5 +1,6 @@
 package com.its.fppbkk.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -8,6 +9,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.its.fppbkk.entity.Restoran;
 import com.its.fppbkk.entity.Tag;
 
 @Repository
@@ -57,6 +59,29 @@ public class TagDAOImpl implements TagDAO {
 		
 		kueri.executeUpdate();
 
+	}
+
+	@Override
+	public List<Tag> getTagIn(int restoID) {
+		// TODO Auto-generated method stub
+		Session currSession = sessionFactory.getCurrentSession();
+		
+		
+		Query<Tag> kueri = currSession.createQuery("from Tag",Tag.class);
+		
+		
+		List<Tag> tags1 = kueri.getResultList();
+		
+		
+		return tags1;
+	}
+
+	@Override
+	public List<Tag> getTagNot(int restoID) {
+		// TODO Auto-generated method stub
+		Session currSession = sessionFactory.getCurrentSession();
+
+		return null;
 	}
 
 }

@@ -24,7 +24,7 @@
 </head>
 <body>
 <div class="container">
-  <h2> Manage Tag </h2>
+  <h2> Edit ${restoku.restoNama } Tag </h2>
   <p>Manage Your Tag</p> 
   
   <input type="button" value="Add Tag"
@@ -40,7 +40,7 @@
       </tr>
     </thead>
     <tbody>
-    <c:forEach var="tempTag" items="${tagku}">
+    <c:forEach var="tempTag" items="${tagIn}">
 	<!-- construct an "update" link with customer id -->
 			
 

@@ -1,5 +1,6 @@
 package com.its.fppbkk.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -62,5 +63,12 @@ public class Tag {
 		this.resto = resto;
 	}
 
-	
+	public void addRestoran(Restoran theResto) {
+		
+		if (resto == null) {
+			resto = new ArrayList<>();
+		}
+		
+		resto.add(theResto);
+	}
 }

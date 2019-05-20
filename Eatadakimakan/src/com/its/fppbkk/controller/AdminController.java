@@ -149,4 +149,17 @@ public class AdminController {
 		
 		return "redirect:/admin/managetag";
 	}
+	
+	@GetMapping("/editRestoTag")
+	public String editRestoTag(@ModelAttribute("restoranID")int restoID,Model myModel) {
+		
+		Restoran resto = restoranService.getRestoranByID(restoID);
+		
+		List <Tag> tagku = tagService.getTagIn(restoID);
+		
+		myModel.addAttribute("restoku", resto);
+		myModel.addAttribute("tagIn", tagku);
+		
+		return "/admin/edit_tag";
+	}
 }
