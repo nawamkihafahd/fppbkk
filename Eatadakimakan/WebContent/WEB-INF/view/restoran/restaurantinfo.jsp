@@ -4,25 +4,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Resto Here</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>${resto.restoNama}</title>
+
+  <!-- Bootstrap core CSS -->
+ 
+  <link href=" <c:url value="/resources/vendor/bootstrap/css/bootstrap.min.css"/>" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href=" <c:url value="/resources/css/shop-homepage.css"/>" rel="stylesheet">
+	<link href="<c:url value="/resources/css/custom.css"/>" rel="stylesheet">
 </head>
-<body>
-<h1>${resto.restoNama} 
-</h1>
-${resto.restoDaerah} <br>
-${resto.restoAlamat}<br>
 
-<c:forEach var="tempTag" items="${tagku}"> 
-${tempTag.tagNama}<br>
-</c:forEach>
 
-<c:forEach var="tempMenu" items="${menuku}"> 
-${tempMenu.menuNama}<br>
-${tempMenu.menuHarga}<br>
-</c:forEach>
+<body class="own-texture-bg">
 
+
+<div class = "container">
+	
+	<div class = "row">
+		<div class="col-lg-3">
+		
+		<div class = "container bg-dark m-3">
+		
+        <h2 class="my-4 eat-block-clear">${resto.restoNama}</h2>
+        <div class = "container pb-2">
+        <ul class="list-group">
+        	<li class="list-group-item list-group-item-info"> ${resto.restoDaerah} </li>
+        	<li class="list-group-item list-group-item-secondary"> ${resto.restoAlamat} </li>
+        </ul>
+        </div>
+		</div>
+      </div>
+		<div class="col-lg-9">
+			
+			<div class= "container p-1">
+			<div class= "bg-light p-2 mb-4">
+				<div class = "container">
+					<h1>${resto.restoNama}</h1>
+					<img class = "img-fluid p-1" src="<c:url value="${resto.restoImagePath}"/>">
+				<br>
 				
+				<c:forEach var="tempTag" items="${tagku}"> 	
+				<a href="#" class="btn btn-secondary" role="button">${tempTag.tagNama}</a>
+				</c:forEach>	
+				</div>
+			</div>
+			</div>
+				
+			<div class="row">
+				<c:forEach var="tempMenu" items="${menuku}">
+				<div class="col-lg-4 col-md-6 mb-4">
+            		<div class="card h-100">
+              			<a href="#"><img class="card-img-top" src="<c:url value="${tempMenu.menuImagePath}"/>" alt=""></a>
+              		<div class="card-body">
+                		<h4 class="card-title">
+                  			<a href="#"class="font-brown">${tempMenu.menuNama}</a>
+                		</h4>
+                		<h5>${tempMenu.menuHarga}</h5>
+                		<p class="card-text">Gado-gado Khas Jakarta!</p>
+              		</div>
+              		<div class="card-footer">
+                		<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              		</div>
+            		</div>
+          		</div>
+				</c:forEach>
+			</div>
+			
+		
+		
+		</div>
+		
+	
+	</div>
+</div>
+
+
+
+<!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+				
+<script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>
+<script src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
 
 </body>
 </html>
