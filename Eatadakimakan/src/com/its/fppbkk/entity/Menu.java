@@ -30,17 +30,20 @@ public class Menu {
 	@Column(name="Menu_Harga")
 	private int menuHarga;
 
-	public Menu(String menuNama, int menuHarga) {
+	@Column(name="Menu_Image_Path")
+	private String menuImagePath;
+	
+	
+	public Menu(String menuNama, int menuHarga, String menuImagePath) {
 		this.menuNama = menuNama;
 		this.menuHarga = menuHarga;
+		this.menuImagePath = menuImagePath;
 	}
-	
 	
 
 	public Menu() {
+	
 	}
-
-
 
 	public int getid() {
 		return id;
@@ -73,6 +76,12 @@ public class Menu {
 	public void setMenuHarga(int menuHarga) {
 		this.menuHarga = menuHarga;
 	}
-	
-	
+
+	public String getMenuImagePath() {
+		return menuImagePath;
+	}
+
+	public void setMenuImagePath(String menuImagePath) {
+		this.menuImagePath = menuImagePath;
+	}
 }

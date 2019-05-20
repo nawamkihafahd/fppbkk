@@ -33,7 +33,7 @@ CREATE TABLE `menu` (
 
 /*Data for the table `menu` */
 
-insert  into `menu`(`ID`,`Resto_ID`,`Menu_Nama`,`Menu_Harga`,`Menu_Image_Path`) values (1,1,'Pecel',10000,NULL),(2,1,'Rawon',11000,NULL),(3,2,'Nasi Goreng',13000,NULL),(4,2,'Mi Goreng',13000,NULL);
+insert  into `menu`(`ID`,`Resto_ID`,`Menu_Nama`,`Menu_Harga`,`Menu_Image_Path`) values (1,1,'Pecel',10000,'1'),(2,1,'Rawon',11000,'2'),(3,2,'Nasi Goreng',13000,'3'),(4,2,'Mi Goreng',13000,NULL);
 
 /*Table structure for table `resto_tag` */
 
@@ -69,7 +69,7 @@ CREATE TABLE `restoran` (
 
 /*Data for the table `restoran` */
 
-insert  into `restoran`(`ID`,`Resto_Nama`,`Resto_Daerah`,`Resto_Alamat`,`Resto_Budget_Min`,`Resto_Budget_Max`,`Resto_Image_Path`) values (1,'Pecel Cak Tikno','Keputih','Pertigaan Keputih',7000,50000,NULL),(2,'Nasi Goreng Bonek','Mulyosari','Depan McD mulyos',15000,100000,NULL);
+insert  into `restoran`(`ID`,`Resto_Nama`,`Resto_Daerah`,`Resto_Alamat`,`Resto_Budget_Min`,`Resto_Budget_Max`,`Resto_Image_Path`) values (1,'Pecel Cak Tikno','Keputih','Pertigaan Keputih',7000,50000,'5'),(2,'Nasi Goreng Bonek','Mulyosari','Depan McD mulyos',15000,100000,NULL);
 
 /*Table structure for table `tag` */
 

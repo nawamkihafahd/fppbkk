@@ -39,6 +39,17 @@ public class Restoran {
 	@Column(name="Resto_Budget_Max")
 	private int restoBudgetMax;
 	
+	@Column(name="Resto_Image_Path")
+	private String restoImagePath;
+	
+	public String getRestoImagePath() {
+		return restoImagePath;
+	}
+
+	public void setRestoImagePath(String restoImagePath) {
+		this.restoImagePath = restoImagePath;
+	}
+
 	@OneToMany(mappedBy="restoran")
 	private List<Menu> menus;
 	
@@ -47,10 +58,11 @@ public class Restoran {
 	private List<Tag> tags;
 	
 	
-	public Restoran(String restoNama, String restoDaerah, String restoAlamat) {
+	public Restoran(String restoNama, String restoDaerah, String restoAlamat, String restoImagePath) {
 		this.restoNama = restoNama;
 		this.restoDaerah = restoDaerah;
 		this.restoAlamat = restoAlamat;
+		this.restoImagePath=restoImagePath;
 	}
 	
 	
