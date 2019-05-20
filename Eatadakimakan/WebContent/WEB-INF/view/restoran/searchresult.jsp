@@ -53,7 +53,7 @@
 								</c:forEach>
 							</ul>
 						</td>
-						<td><a class="btn btn-primary btn-block" href="restoran/${tempResto.id}" role="button">Lihat Restoran</a></td>
+						<td><a class="btn btn-primary btn-block" href="${tempResto.id}" role="button">Lihat Restoran</a></td>
 					</tr>
 				
 		</c:forEach>

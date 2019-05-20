@@ -47,7 +47,7 @@ public class AdminController {
 	}
 	
 	@GetMapping("/editrestaurant")
-	public String editRestaurant(@RequestParam("restoID")int theInt,Model theModel) {
+	public String editRestaurant(@RequestParam("restoranID")int theInt,Model theModel) {
 		
 		Restoran restoku = restoranService.getRestoranByID(theInt);
 		

@@ -150,6 +150,15 @@ public class Restoran {
 		
 		menus.add(theMenu);
 	}
+	
+	public void addTag(Tag theTag) {
+		
+		if (tags == null) {
+			tags = new ArrayList<>();
+		}
+		
+		tags.add(theTag);
+	}
 
 
 }

@@ -32,7 +32,7 @@
 			<form:hidden path="id" />
 			<div class="form-group">
 				<label>Nama Tag:</label></td>
-				<form:input path="menuNama" />
+				<form:input path="tagNama" />
 			</div>
 			<input type="submit" value="Save" class="save" />	
 		

@@ -8,10 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.its.fppbkk.entity.Restoran;
 import com.its.fppbkk.service.RestoranService;
 import com.its.fppbkk.service.RestoranServiceImpl;
+import com.its.fppbkk.controller.RestoranController;
 
 @Controller
 public class MainController {
@@ -43,16 +46,5 @@ public class MainController {
 	public String searchResto() {
 		return "search";
 	}
-	@RequestMapping("/searchrestauranform")
-	public String search_resto_form() {
-		return "searchrestaurantform";
-	}
-	@RequestMapping("/searchresult")
-	public String search_result(HttpServletRequest request, Model model) {
-		String budget = request.getParameter("budget");
-		String location = request.getParameter("location");
-		List<Restoran> resto= restoranService.getRestoranByBudget(Integer.parseInt(budget), location);
-		model.addAttribute("resto",resto);
-		return "searchresult";
-	}
+	
 }
