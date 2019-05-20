@@ -33,7 +33,8 @@
 			<th>Alamat</th>
 			<th>Budget Min</th>
 			<th>Budget Max</th>
-			<th>Link</th>
+			<th>Kategori</th>
+			<th>Lihat Restoran</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -45,6 +46,13 @@
 						<td> ${tempResto.restoAlamat} </td>
 						<td> ${tempResto.restoBudgetMin} </td>
 						<td> ${tempResto.restoBudgetMax} </td>
+						<td>
+							<ul>
+								<c:forEach var="tempTag" items="${tempResto.tags}">
+									<li>${tempTag.tagNama}</li>
+								</c:forEach>
+							</ul>
+						</td>
 						<td><a class="btn btn-primary btn-block" href="restoran/${tempResto.id}" role="button">Lihat Restoran</a></td>
 					</tr>
 				
