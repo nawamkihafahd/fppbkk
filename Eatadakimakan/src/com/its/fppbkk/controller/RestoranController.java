@@ -45,11 +45,13 @@ public class RestoranController {
 		List<Restoran> resto = restoranService.getRestoran();
 		Random rand = new Random();
 				
-		Restoran restorandom = resto.get(rand.nextInt(resto.size()));
-		
-		
-		
-		return getDetails(myModel, restorandom.getId());
+		if(resto.size() > 0)
+		{
+			Restoran restorandom = resto.get(rand.nextInt(resto.size()));
+			return getDetails(myModel, restorandom.getId());
+		}
+		else
+			return "/";
 	}
 	@GetMapping("/searchrandom")
 	public String getSearchRandom(HttpServletRequest request, Model myModel) {
@@ -57,12 +59,18 @@ public class RestoranController {
 		String location = request.getParameter("location");
 		List<Restoran> resto= restoranService.getRestoranByBudget(Integer.parseInt(budget), location);
 		Random rand = new Random();
-				
-		Restoran restorandom = resto.get(rand.nextInt(resto.size()));
+		if(resto.size() > 0)
+		{
+			Restoran restorandom = resto.get(rand.nextInt(resto.size()));
+			return getDetails(myModel, restorandom.getId());
+		}
+		else
+			return "restoran/searchrestaurantform";
 		
 		
 		
-		return getDetails(myModel, restorandom.getId());
+		
+		
 	}
 	@GetMapping("/{id}")
 	public String getDetails(Model myModel, @PathVariable int id) {
@@ -80,7 +88,7 @@ public class RestoranController {
 	}
 	@RequestMapping("/searchrestauranform")
 	public String search_resto_form() {
-		return "searchrestaurantform";
+		return "restoran/searchrestaurantform";
 	}
 	@RequestMapping(value = "/searchresult", method=RequestMethod.POST, params="submit")
 	public String search_result(HttpServletRequest request, Model model) {
@@ -88,7 +96,7 @@ public class RestoranController {
 		String location = request.getParameter("location");
 		List<Restoran> resto= restoranService.getRestoranByBudget(Integer.parseInt(budget), location);
 		model.addAttribute("resto",resto);
-		return "searchresult";
+		return "restoran/searchresult";
 		
 	}
 	@RequestMapping(value = "/searchresult", method=RequestMethod.POST, params="random")
