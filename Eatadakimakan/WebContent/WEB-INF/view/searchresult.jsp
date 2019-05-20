@@ -47,9 +47,9 @@
 						<td> ${tempResto.restoBudgetMin} </td>
 						<td> ${tempResto.restoBudgetMax} </td>
 						<td>
-							<ul>
+							<ul class="list-group">
 								<c:forEach var="tempTag" items="${tempResto.tags}">
-									<li>${tempTag.tagNama}</li>
+									<li class="list-group-item list-group-item-dark">${tempTag.tagNama}</li>
 								</c:forEach>
 							</ul>
 						</td>
