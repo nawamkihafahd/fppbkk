@@ -11,7 +11,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Eatadakimakan Admin Panel</title>
+  <title>Eatadakimakan Add Menu</title>
 
   <!-- Custom fonts for this template-->
   <link href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"/>" rel="stylesheet" type="text/css">
@@ -24,30 +24,30 @@
 
 </head>
 <body>
-<form:form action="saveRestaurant" modelAttribute="restoku" method="POST">
+
+ 	<c:url var="saveMenu" value="/admin/saveMenu">
+		<c:param name="restoID" value="${restoID}" />
+	</c:url>
+
+<form:form action="${saveMenu }" modelAttribute="menuku" method="POST">
 
 			<!-- need to associate this data with customer id -->
 			<form:hidden path="id" />
-					
-			<label>Nama Restoran:</label></td>
-			<form:input path="restoNama" />
-			<label>Daerah Restoran:</label></td>
-			<form:input path="restoDaerah" />
-			<label>Alamat Restoran:</label></td>
-			<form:input path="restoAlamat" />
-			<label>Minimal Budget:</label></td>
-			<form:input path="restoBudgetMin" />
-			<label>Maksimal Budget:</label></td>
-			<form:input path="restoBudgetMax" />
-			<label>Tags:</label></td>
-			<form:input path="tags" />
-			<form:input path="tags" />
-			<form:input path="tags" />
-			<td><label></label></td>
-			<td><input type="submit" value="Save" class="save" /></td>			
+			<div class="form-group">
+				<label>Nama Menu:</label></td>
+				<form:input path="menuNama" />
+			</div>
+			<div class="form-group">
+				<label>Harga:</label></td>
+				<form:input path="menuHarga" />
+			</div>			
+			<input type="submit" value="Save" class="save" />	
 		
 		</form:form>
-
+		
+		
+		
+		
 <script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>
   <script src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
 

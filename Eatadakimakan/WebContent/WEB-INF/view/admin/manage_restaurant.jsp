@@ -47,16 +47,20 @@
     <c:forEach var="tempResto" items="${restoku}">
 	<!-- construct an "update" link with customer id -->
 	<c:url var="editLink" value="/admin/editrestaurant">
-		<c:param name="restoranId" value="${tempResto.id}" />
+		<c:param name="restoranID" value="${tempResto.id}" />
 	</c:url>
 	
 	<c:url var="manageMenuLink" value="/admin/managemenu">
-		<c:param name="restoranId" value="${tempResto.id}" />
+		<c:param name="restoranID" value="${tempResto.id}" />
+	</c:url>
+	
+	<c:url var="editTagLink" value="/admin/editRestoTag">
+		<c:param name="restoranID" value="${tempResto.id}" />
 	</c:url>					
 
 <!-- 					construct an "delete" link with customer id -->
 	<c:url var="deleteLink" value="/admin/deleterestaurant">
-		<c:param name="restoranId" value="${tempResto.id}" />
+		<c:param name="restoranID" value="${tempResto.id}" />
 	</c:url>					
 	
 	
@@ -77,6 +81,8 @@
 			<a href="${updateLink}">Update</a>
 			|
 			<a href="${manageMenuLink}">Manage Menu</a>
+			|
+			<a href="${editTagLink}">Edit Tag</a>
 			|
 			<a href="${deleteLink}"
 			   onclick="if (!(confirm('Are you sure you want to delete this restaurant?'))) return false">Delete</a>

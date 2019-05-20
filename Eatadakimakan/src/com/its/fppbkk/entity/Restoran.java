@@ -1,5 +1,6 @@
 package com.its.fppbkk.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -139,6 +140,15 @@ public class Restoran {
 
 	public void setRestoImagePath(String restoImagePath) {
 		this.restoImagePath = restoImagePath;
+	}
+	
+	public void addMenu(Menu theMenu) {
+		
+		if (menus == null) {
+			menus = new ArrayList<>();
+		}
+		
+		menus.add(theMenu);
 	}
 
 
