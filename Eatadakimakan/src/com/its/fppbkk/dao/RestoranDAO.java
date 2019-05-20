@@ -17,5 +17,5 @@ public interface RestoranDAO {
 	public void deleteRestoran(int restoID);
 	
 	public List<Tag> getTagRestoran(int restoID);
-	public List<Restoran> getRestoranByBudget(int budget);
+	public List<Restoran> getRestoranByBudget(int budget, String location);
 }

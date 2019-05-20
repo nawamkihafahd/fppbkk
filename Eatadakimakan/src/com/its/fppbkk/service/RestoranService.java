@@ -18,5 +18,5 @@ public interface RestoranService {
 
 	public List<Tag> getTagRestoran(int restoID);
 	
-	public List<Restoran> getRestoranByBudget(int budget);
+	public List<Restoran> getRestoranByBudget(int budget, String location);
 }

@@ -75,14 +75,27 @@ public class RestoranDAOImpl implements RestoranDAO {
 
 	}
 	
-	public List<Restoran> getRestoranByBudget(int budget)
+	public List<Restoran> getRestoranByBudget(int budget, String location)
 	{
 		Session currSession = sessionFactory.getCurrentSession();
-		Query<Restoran> kueri = currSession.createQuery("from Restoran where Resto_Budget_Min<=:restoranbudget and Resto_Budget_Max>=:restoranbudget", Restoran.class);
-		kueri.setParameter("restoranbudget", budget);
+		if(location == "")
+		{
+			Query<Restoran> kueri = currSession.createQuery("from Restoran where Resto_Budget_Min<=:restoranbudget and Resto_Budget_Max>=:restoranbudget", Restoran.class);
+			kueri.setParameter("restoranbudget", budget);
+			
+			List<Restoran> restorans = kueri.getResultList();
+			return restorans;
+		}
+		else
+		{
+			Query<Restoran> kueri = currSession.createQuery("from Restoran where Resto_Budget_Min<=:restoranbudget and Resto_Budget_Max>=:restoranbudget and (Resto_Daerah like concat('%',:restoranlokasi,'%') or Resto_Alamat like concat('%',:restoranlokasi,'%'))", Restoran.class);
+			kueri.setParameter("restoranbudget", budget).setParameter("restoranlokasi", location);
+			//kueri.setParameter("restoranlokasi", location);
+			
+			List<Restoran> restorans = kueri.getResultList();
+			return restorans;
+		}
 		
-		List<Restoran> restorans = kueri.getResultList();
-		return restorans;
 	}
 
 }

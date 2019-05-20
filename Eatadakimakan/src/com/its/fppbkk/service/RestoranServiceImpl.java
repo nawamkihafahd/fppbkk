@@ -54,8 +54,8 @@ public class RestoranServiceImpl implements RestoranService {
 	
 	@Override
 	@Transactional
-	public List<Restoran> getRestoranByBudget(int budget)
+	public List<Restoran> getRestoranByBudget(int budget, String location)
 	{
-		return restoranDAO.getRestoranByBudget(budget);
+		return restoranDAO.getRestoranByBudget(budget, location);
 	}
 }

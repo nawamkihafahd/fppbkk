@@ -51,7 +51,7 @@ public class MainController {
 	public String search_result(HttpServletRequest request, Model model) {
 		String budget = request.getParameter("budget");
 		String location = request.getParameter("location");
-		List<Restoran> resto= restoranService.getRestoranByBudget(Integer.parseInt(budget));
+		List<Restoran> resto= restoranService.getRestoranByBudget(Integer.parseInt(budget), location);
 		model.addAttribute("resto",resto);
 		return "searchresult";
 	}
