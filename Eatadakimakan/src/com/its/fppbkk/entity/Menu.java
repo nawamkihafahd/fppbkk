@@ -20,7 +20,7 @@ public class Menu {
 	@Column(name="ID")
 	private int id;
 	
-	@ManyToOne(fetch=FetchType.EAGER,cascade= {CascadeType.DETACH, CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+	@ManyToOne(fetch=FetchType.EAGER,cascade=CascadeType.ALL )
 	@JoinColumn(name="Resto_ID")
 	private Restoran restoran;
 	

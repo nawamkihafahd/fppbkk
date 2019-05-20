@@ -21,26 +21,40 @@
 
   <!-- Custom styles for this template-->
   <link href="<c:url value="/resources/css/sb-admin.css"/>" rel="stylesheet">
+  <link href="<c:url value="/resources/css/custom.css"/>" rel="stylesheet">
 
 </head>
-<body>
+<body class="own-custom-res-bg">
 
+<div class="container own-white-bg">
  	
-<form:form action="saveTag" modelAttribute="tagku" method="POST">
+ 	<table>
+ 	<tbody>
+ 	<form:form action="saveTag" modelAttribute="tagku" method="POST">
 
 			<!-- need to associate this data with customer id -->
+			
+			
 			<form:hidden path="id" />
-			<div class="form-group">
-				<label>Nama Tag:</label></td>
-				<form:input path="tagNama" />
-			</div>
-			<input type="submit" value="Save" class="save" />	
-		
+			<tr>
+			<td>	<label>Nama Tag:</label></td>
+			<td>	<form:input path="tagNama" /></td>
+			</tr>
+			<tr>
+			<td><input type="submit" value="Save" class="save" />	</td>
+		</tr>
 		</form:form>
+ 	
+ 	</tbody>
+ 	</table>
 		
+		<br>
+		<input type="button" value="Back to Tag List"
+				   onclick="window.location.href='managetag'; return false;"
+				   class="btn btn-primary btn-lg"
+ 		 />
 		
-		
-		
+		</div>
 <script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>
   <script src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
 

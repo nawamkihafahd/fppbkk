@@ -21,22 +21,32 @@
 
   <!-- Custom styles for this template-->
   <link href="<c:url value="/resources/css/sb-admin.css"/>" rel="stylesheet">
+  
+  <link href="<c:url value="/resources/css/custom.css"/>" rel="stylesheet">
 
 </head>
-<body>
+<body class="own-custom-res-bg">
 
-<div class="container">
+<div class="container own-white-bg">
 	<div class="row">
 		<div class="col-lg-3"></div>
 		<div class="col-lg-6">
-		<input type="button" value="Manage Restaurant"
+			<div class="row"></div>
+		
+  		<div class="row">
+  			<input type="button" value="Manage Restaurant"
 				   onclick="window.location.href='managerestaurant'; return false;"
 				   class="btn btn-primary btn-block"
-  		/>
-  		<input type="button" value="Manage Tag"
+  			/>
+  			
+  			<input type="button" value="Manage Tag"
 				   onclick="window.location.href='managetag'; return false;"
 				   class="btn btn-primary btn-block"
-  		/>
+  			/>
+  		</div>
+  		<div class="row">
+  			
+  		</div>
 <!-- 			<button href="managerestaurant" type="button" class="btn btn-primary btn-block" >Manage Restaurant</button> -->
 <!-- 			<br> -->
 <!-- 			<button href="managetag" type="button" class="btn btn-primary btn-block" >Manage Tags</button> -->

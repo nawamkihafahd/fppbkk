@@ -20,10 +20,12 @@
 
   <!-- Custom styles for this template-->
   <link href="<c:url value="/resources/css/sb-admin.css"/>" rel="stylesheet">
+  
+  <link href="<c:url value="/resources/css/custom.css"/>" rel="stylesheet">
 
 </head>
-<body>
-<div class="container">
+<body class="own-custom-res-bg">
+<div class="container own-white-bg">
   <h2> ${restoku.restoNama} </h2>
   <p>Manage Your Menu</p> 
   
@@ -34,26 +36,29 @@
   <input type="button" value="Add Menu"
 				   onclick="window.location.href='${addMenuLink}'; return false;"
 				   class="btn btn-primary btn-lg"
-  />          
+  />
+  <br>
+  <br>          
   <table class="table table-bordered">
     <thead>
       <tr>
         <th>ID</th>
         <th>Nama Menu</th>
         <th>Harga</th>
+        <th>Image Path</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
     <c:forEach var="tempMenu" items="${menuku}">
 	<!-- construct an "update" link with customer id -->
-	<c:url var="editLink" value="/admin/editrestaurant">
+	<c:url var="editLink" value="/admin/showFormForEditMenu">
 		<c:param name="menuID" value="${tempMenu.id}" />
 		<c:param name="restoID" value="${restoku.id}" />
 	</c:url>
 	
 <!-- 					construct an "delete" link with customer id -->
-	<c:url var="deleteLink" value="/admin/deleterestaurant">
+	<c:url var="deleteLink" value="/admin/deleteMenu">
 		<c:param name="menuID" value="${tempMenu.id}" />
 		<c:param name="restoID" value="${restoku.id}" />
 	</c:url>					
@@ -64,6 +69,7 @@
         <td>${tempMenu.id}</td>
         <td>${tempMenu.menuNama}</td>
         <td>${tempMenu.menuHarga}</td>
+        <td>${tempMenu.menuImagePath}</td>
         <td>
 			<a href="${editLink}">Edit</a>
 			|
@@ -76,9 +82,10 @@
     </tbody>
   </table>
   <input type="button" value="Back to Restaurant List"
-				   onclick="window.location.href='panel'; return false;"
+				   onclick="window.location.href='managerestaurant'; return false;"
 				   class="btn btn-primary btn-lg"
  		 />
+ 		 
   
 </div>
 

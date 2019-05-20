@@ -20,16 +20,19 @@
 
   <!-- Custom styles for this template-->
   <link href="<c:url value="/resources/css/sb-admin.css"/>" rel="stylesheet">
+  
+  <link href="<c:url value="/resources/css/custom.css"/>" rel="stylesheet">
 
 </head>
-<body>
-<div class="container">
+<body class="own-custom-res-bg">
+<div class="container own-white-bg">
   <h2>Manage Restaurant</h2>
   <p>Manage Your Restaurant</p> 
   <input type="button" value="Add Restaurant"
 				   onclick="window.location.href='showFormForAdd'; return false;"
 				   class="btn btn-primary btn-lg"
-  />          
+  />         
+  <br> 
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -40,6 +43,7 @@
         <th>Minimal Budget</th>
         <th>Maksimal Budget</th>
         <th>Tags</th>
+        <th>Image path</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -77,6 +81,7 @@
         	${tempTag.tagNama },<br>
         	</c:forEach>
         </td>
+         <td>${tempResto.restoImagePath}</td>
         <td>
 			<a href="${editLink}">Edit</a>
 			|
@@ -92,7 +97,12 @@
       
     </tbody>
   </table>
+  <input type="button" value="Back to Panel"
+				   onclick="window.location.href='panel'; return false;"
+				   class="btn btn-primary btn-lg"
+ 		 />
 </div>
+
 
 <script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>
   <script src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>

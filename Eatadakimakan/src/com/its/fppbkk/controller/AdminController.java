@@ -107,7 +107,7 @@ public class AdminController {
 	
 		Menu menuku = menuService.getMenuByID(menuID);
 		
-		theModel.addAttribute("restoID", theRestoID);
+		theModel.addAttribute("restoranID", theRestoID);
 		
 		theModel.addAttribute("menuku", menuku);
 		

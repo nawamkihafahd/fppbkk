@@ -21,45 +21,63 @@
 
   <!-- Custom styles for this template-->
   <link href="<c:url value="/resources/css/sb-admin.css"/>" rel="stylesheet">
+  
+  <link href="<c:url value="/resources/css/custom.css"/>" rel="stylesheet">
 
 </head>
-<body>
-<form:form action="saveResto" modelAttribute="restoku" method="POST">
+<body class="own-custom-res-bg">
+<div class="own-white-bg">
+<table>
+<tbody>
+			
+
+			<form:form action="saveResto" modelAttribute="restoku" method="POST">
 
 			<!-- need to associate this data with customer id -->
 			<form:hidden path="id" />
-			<div class="form-group">
-				<label>Nama Restoran:</label></td>
-				<form:input path="restoNama" />
-			</div>
-			<div class="form-group">
-				<label>Daerah Restoran:</label></td>
-				<form:input path="restoDaerah" />
-			</div>
-			<div class="form-group">
-				<label>Alamat Restoran:</label></td>
-				<form:input path="restoAlamat" />
-			</div>
-			<div class="form-group">
-				<label>Minimal Budget:</label></td>
-				<form:input path="restoBudgetMin" />
-				
-			</div>
-			<div class="form-group">
-				<label>Maksimal Budget:</label></td>
-				<form:input path="restoBudgetMax" />
-			</div>
 			
+			 
+			<td><label>Nama Restoran:</label></td> 
+			<td><form:input path="restoNama" /> </td>
 			
-			<input type="submit" value="Save" class="save" />	
+			 <tr>
+				<td><label>Daerah Restoran:</label></td> 
+				<td><form:input path="restoDaerah" /></td>
+			</tr>
+			 <tr>
+				<td><label>Alamat Restoran:</label></td> 
+				<td><form:input path="restoAlamat" /></td>
 		
+			 </tr>
+			 <tr>
+				<td><label>Minimal Budget:</label></td> 
+				<td><form:input path="restoBudgetMin" /></td>
+				
+			</tr>
+			 <tr>
+				<td><label>Maksimal Budget:</label></td> 
+				<td><form:input path="restoBudgetMax" /></td>
+			
+			</tr>
+			
+			 <tr>
+				<td><label>Image Path:</label></td> 
+				<td><form:input path="restoImagePath" /></td>
+			
+			</tr>
+			<tr>
+			<td><input type="submit" value="Save" class="save" />	</td>
+			</tr>
 		</form:form>
 		
+</tbody>
+</table>
+
 		<input type="button" value="Back to Restaurant List"
-				   onclick="window.location.href='panel'; return false;"
+				   onclick="window.location.href='managerestaurant'; return false;"
 				   class="btn btn-primary btn-lg"
  		 />
-
+</div>
 <script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>
   <script src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
 

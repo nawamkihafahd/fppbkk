@@ -11,7 +11,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Eatadakimakan Add Menu</title>
+  <title>Eatadakimakan Add/Edit Menu</title>
 
   <!-- Custom fonts for this template-->
   <link href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"/>" rel="stylesheet" type="text/css">
@@ -21,32 +21,54 @@
 
   <!-- Custom styles for this template-->
   <link href="<c:url value="/resources/css/sb-admin.css"/>" rel="stylesheet">
+  
+  <link href="<c:url value="/resources/css/custom.css"/>" rel="stylesheet">
 
 </head>
-<body>
+<body class="own-custom-res-bg">
 
+<div class="container own-white-bg">
  	<c:url var="saveMenu" value="/admin/saveMenu">
 		<c:param name="restoID" value="${restoID}" />
 	</c:url>
-
-<form:form action="${saveMenu }" modelAttribute="menuku" method="POST">
+	
+	<c:url var="backMenu" value="/admin/managemenu">
+		<c:param name="restoranID" value="${restoID}" />
+	</c:url>
+	
+	<table>
+	<tbody>
+	<form:form action="${saveMenu }" modelAttribute="menuku" method="POST">
 
 			<!-- need to associate this data with customer id -->
 			<form:hidden path="id" />
-			<div class="form-group">
-				<label>Nama Menu:</label></td>
-				<form:input path="menuNama" />
-			</div>
-			<div class="form-group">
-				<label>Harga:</label></td>
-				<form:input path="menuHarga" />
-			</div>			
-			<input type="submit" value="Save" class="save" />	
-		
+			<tr>
+				<td><label>Nama Menu:</label></td>
+				<td><form:input path="menuNama" /></td>
+			</tr>
+			<tr>
+			<td>	<label>Harga:</label></td>
+			<td>	<form:input path="menuHarga" /></td>
+			</tr>
+			<tr>
+				<td><label>Image Path:</label></td>
+				<td><form:input path="menuImagePath" /></td>
+			</tr>
+			<tr>
+			<td><input type="submit" value="Save" class="save" />	</td>
+			</tr>
 		</form:form>
+	
+	
+	</tbody>
+	</table>
 		
+<input type="button" value="Back to Menu List"
+				   onclick="window.location.href='${backMenu}'; return false;"
+				   class="btn btn-primary btn-lg"
+ 		 />		
 		
-		
+		</div>
 		
 <script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>
   <script src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>

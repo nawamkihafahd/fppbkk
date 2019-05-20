@@ -20,10 +20,12 @@
 
   <!-- Custom styles for this template-->
   <link href="<c:url value="/resources/css/sb-admin.css"/>" rel="stylesheet">
+  
+  <link href="<c:url value="/resources/css/custom.css"/>" rel="stylesheet">
 
 </head>
-<body>
-<div class="container">
+<body class="own-custom-res-bg">
+<div class="container own-white-bg">
   <h2> Manage Tag </h2>
   <p>Manage Your Tag</p> 
   
@@ -63,7 +65,8 @@
       
     </tbody>
   </table>
-  <input type="button" value="Back to Restaurant List"
+  <br>
+  <input type="button" value="Back to Panel"
 				   onclick="window.location.href='panel'; return false;"
 				   class="btn btn-primary btn-lg"
  		 />
