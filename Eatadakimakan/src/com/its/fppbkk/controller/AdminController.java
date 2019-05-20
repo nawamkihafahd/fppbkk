@@ -2,6 +2,8 @@ package com.its.fppbkk.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.its.fppbkk.entity.Menu;
@@ -31,10 +34,39 @@ public class AdminController {
 	@Autowired
 	private TagService tagService;
 	
+	
+	
+	
 	@GetMapping("/panel")
 	public String adminPanel() {
 		return "/admin/panel";
 	}
+	
+	@GetMapping("/")
+	public String base() {
+		return "redirect:/admin/login";
+	}
+	
+	
+	@GetMapping("/login")
+	public String loginform() {
+		return "/admin/login";
+	}
+	
+	@RequestMapping(value = "/loginresult", method=RequestMethod.POST, params="submit")
+	public String loginres(HttpServletRequest request, Model model) {
+		String username = request.getParameter("inputUsername");
+		String password = request.getParameter("inputPassword");
+		
+		if (username.equals("admin") && password.equals("admin")) {
+			return "redirect:/admin/panel/";
+		}
+		else {
+			return "redirect:/admin/";
+		}
+		
+	}
+	
 	
 	@GetMapping("/managerestaurant")
 	public String manageRestaurant(Model theModel){

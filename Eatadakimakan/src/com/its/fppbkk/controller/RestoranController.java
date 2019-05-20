@@ -29,6 +29,12 @@ public class RestoranController {
 	@Autowired
 	private MenuService menuService;
 	
+	
+	@GetMapping("/")
+	public String base() {
+		return "redirect:/restoran/random";
+	}
+	
 	@GetMapping("/listall")
 	public String getAll(Model myModel) {
 		
