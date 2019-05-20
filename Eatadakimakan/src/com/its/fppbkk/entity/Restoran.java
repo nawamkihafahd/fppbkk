@@ -42,7 +42,7 @@ public class Restoran {
 	@Column(name="Resto_Image_Path")
 	private String restoImagePath;
 	
-	@OneToMany(mappedBy="restoran")
+	@OneToMany(mappedBy="restoran",cascade=CascadeType.ALL)
 	private List<Menu> menus;
 	
 	@ManyToMany(fetch=FetchType.EAGER,cascade= {CascadeType.DETACH, CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
