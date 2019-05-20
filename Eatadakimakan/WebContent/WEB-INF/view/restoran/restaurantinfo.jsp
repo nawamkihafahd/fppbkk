@@ -38,7 +38,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./restoran/searchrestauranform">Search</a>
+            <a class="nav-link" href="Eatadakimakan/restoran/searchrestauranform">Search</a>
           </li>
         </ul>
       </div>
