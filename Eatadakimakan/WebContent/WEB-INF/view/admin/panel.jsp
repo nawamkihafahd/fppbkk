@@ -23,17 +23,21 @@
   <link href="<c:url value="/resources/css/sb-admin.css"/>" rel="stylesheet">
 
 </head>
-<body>
+<body class="own-texture-bg">
 
 <div class="container">
-	<div class="row">
-		<div class="col-lg-3"></div>
-		<div class="col-lg-6">
-		<input type="button" value="Manage Restaurant"
+
+	<div class="row h-50">
+	
+	
+		<div class="col-lg-3 my-auto"></div>
+		
+		<div class="col-lg-6 h-75 mt-5">
+		<input id= "verticalButton" type="button" value="Manage Restaurant"
 				   onclick="window.location.href='managerestaurant'; return false;"
 				   class="btn btn-primary btn-block"
   		/>
-  		<input type="button" value="Manage Tag"
+  		<input id= "verticalButton" type="button" value="Manage Tag"
 				   onclick="window.location.href='managetag'; return false;"
 				   class="btn btn-primary btn-block"
   		/>
