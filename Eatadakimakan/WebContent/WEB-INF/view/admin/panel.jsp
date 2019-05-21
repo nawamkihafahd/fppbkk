@@ -37,12 +37,12 @@
 		<div class="col-lg-3"></div>
 		<div class="col-lg-6">
 		<input type="button" value="Manage Restaurant"
-				   onclick="window.location.href='managerestaurant'; return false;"
+				   onclick="window.location.href='./managerestaurant'; return false;"
 				   class="btn btn-primary btn-block"
   			/>
   			<br>
   		<input type="button" value="Manage Tag"
-			   onclick="window.location.href='managetag'; return false;"
+			   onclick="window.location.href='./managetag'; return false;"
 			   class="btn btn-primary btn-block"
   		/>
 
