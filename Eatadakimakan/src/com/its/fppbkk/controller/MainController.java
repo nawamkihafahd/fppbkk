@@ -32,10 +32,6 @@ public class MainController {
 		return "admin";
 	}
 	
-	@RequestMapping("/login")
-	public String Login() {
-		return "login";
-	}
 	
 	@RequestMapping("/add_restaurant")
 	public String add_resto() {

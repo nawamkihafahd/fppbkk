@@ -2,11 +2,14 @@ package com.its.fppbkk.controller;
 
 import java.util.List;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,15 +41,17 @@ public class AdminController {
 	
 	
 	@GetMapping("/panel")
-	public String adminPanel() {
+	public String adminPanel(@CookieValue(value = "priv", defaultValue = "nonadmin") String kue) {
+		if(!kue.equals("admin"))
+			return "/admin/login";
 		return "/admin/panel";
 	}
-	
+	/*
 	@GetMapping("/")
 	public String base() {
 		return "redirect:/admin/login";
 	}
-	
+	*/
 	
 	@GetMapping("/login")
 	public String loginform() {
@@ -54,23 +59,28 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/loginresult", method=RequestMethod.POST, params="submit")
-	public String loginres(HttpServletRequest request, Model model) {
+	public String loginres(HttpServletResponse response, HttpServletRequest request, Model model) {
 		String username = request.getParameter("inputUsername");
 		String password = request.getParameter("inputPassword");
 		
 		if (username.equals("admin") && password.equals("admin")) {
-			return "redirect:/admin/panel/";
+			Cookie priv = new Cookie("priv", "admin");
+			priv.setMaxAge(1800);
+					
+			response.addCookie(priv);
+			return "admin/panel";
 		}
 		else {
-			return "redirect:/admin/";
+			return "admin/login";
 		}
 		
 	}
 	
 	
 	@GetMapping("/managerestaurant")
-	public String manageRestaurant(Model theModel){
-		
+	public String manageRestaurant(@CookieValue(value = "priv", defaultValue = "nonadmin") String kue, Model theModel){
+		if(!kue.equals("admin"))
+			return "/admin/login";
 		List<Restoran> restoku = restoranService.getRestoran();		
 		
 		theModel.addAttribute("restoku", restoku);
@@ -79,8 +89,9 @@ public class AdminController {
 	}
 	
 	@GetMapping("/editrestaurant")
-	public String editRestaurant(@RequestParam("restoranID")int theInt,Model theModel) {
-		
+	public String editRestaurant(@CookieValue(value = "priv", defaultValue = "nonadmin") String kue, @RequestParam("restoranID")int theInt,Model theModel) {
+		if(!kue.equals("admin"))
+			return "/admin/login";
 		Restoran restoku = restoranService.getRestoranByID(theInt);
 		
 		theModel.addAttribute("restoku", restoku);
@@ -89,8 +100,9 @@ public class AdminController {
 	}
 	
 	@GetMapping("/managemenu")
-	public String manageMenu(@RequestParam("restoranID") int theInt,Model theModel) {
-		
+	public String manageMenu(@CookieValue(value = "priv", defaultValue = "nonadmin") String kue, @RequestParam("restoranID") int theInt,Model theModel) {
+		if(!kue.equals("admin"))
+			return "/admin/login";
 		Restoran resto = restoranService.getRestoranByID(theInt);
 		
 		List<Menu> menuku = menuService.getMenuRestoran(theInt);
@@ -103,8 +115,9 @@ public class AdminController {
 	}
 
 	@GetMapping("/managetag")
-	public String manageTag(Model theModel) {
-		
+	public String manageTag(@CookieValue(value = "priv", defaultValue = "nonadmin") String kue, Model theModel) {
+		if(!kue.equals("admin"))
+			return "/admin/login";
 		List<Tag> tagku = tagService.getTag();
 		
 		theModel.addAttribute("tagku", tagku);
@@ -113,8 +126,9 @@ public class AdminController {
 	}
 	
 	@GetMapping("/showFormForAdd")
-	public String addRestaurant(Model theModel){
-		
+	public String addRestaurant(@CookieValue(value = "priv", defaultValue = "nonadmin") String kue, Model theModel){
+		if(!kue.equals("admin"))
+			return "/admin/login";
 		Restoran resto = new Restoran();
 		
 		theModel.addAttribute("restoku", resto);
@@ -123,8 +137,9 @@ public class AdminController {
 	}
 	
 	@GetMapping("/showFormForAddMenu")
-	public String addMenu(@ModelAttribute("restoID") int theRestoID, Model theModel){
-	
+	public String addMenu(@CookieValue(value = "priv", defaultValue = "nonadmin") String kue, @ModelAttribute("restoID") int theRestoID, Model theModel){
+		if(!kue.equals("admin"))
+			return "/admin/login";
 		Menu menuku = new Menu();
 		
 		theModel.addAttribute("restoID", theRestoID);
@@ -135,8 +150,9 @@ public class AdminController {
 	}
 	
 	@GetMapping("/showFormForEditMenu")
-	public String editMenu(@ModelAttribute("restoID") int theRestoID,@ModelAttribute("menuID")int menuID ,Model theModel){
-	
+	public String editMenu(@CookieValue(value = "priv", defaultValue = "nonadmin") String kue, @ModelAttribute("restoID") int theRestoID,@ModelAttribute("menuID")int menuID ,Model theModel){
+		if(!kue.equals("admin"))
+			return "/admin/login";
 		Menu menuku = menuService.getMenuByID(menuID);
 		
 		theModel.addAttribute("restoranID", theRestoID);
@@ -147,16 +163,18 @@ public class AdminController {
 	}
 	
 	@PostMapping("/saveResto")
-	public String saveRestaurant(@ModelAttribute("restoku") Restoran resto) {
-		
+	public String saveRestaurant(@CookieValue(value = "priv", defaultValue = "nonadmin") String kue, @ModelAttribute("restoku") Restoran resto) {
+		if(!kue.equals("admin"))
+			return "/admin/login";
 		restoranService.saveRestoran(resto);
 		
 		return "redirect:/admin/managerestaurant";
 	}
 	
 	@PostMapping("/saveMenu")
-	public String saveRestaurant(@ModelAttribute("restoID") int theID,@ModelAttribute("menuku") Menu theMenu,Model resolveModel) {
-		
+	public String saveRestaurant(@CookieValue(value = "priv", defaultValue = "nonadmin") String kue, @ModelAttribute("restoID") int theID,@ModelAttribute("menuku") Menu theMenu,Model resolveModel) {
+		if(!kue.equals("admin"))
+			return "/admin/login";
 		Restoran resto = restoranService.getRestoranByID(theID);
 		
 		theMenu.setRestoran(resto);
@@ -169,16 +187,18 @@ public class AdminController {
 	}
 	
 	@GetMapping("/deleterestaurant")
-	public String deleteRestaurant(@ModelAttribute("restoranID")int theID) {
-		
+	public String deleteRestaurant(@CookieValue(value = "priv", defaultValue = "nonadmin") String kue, @ModelAttribute("restoranID")int theID) {
+		if(!kue.equals("admin"))
+			return "/admin/login";
 		restoranService.deleteRestoran(theID);
 		
 		return "redirect:/admin/managerestaurant";
 	}
 	
 	@GetMapping("/deleteMenu")
-	public String deleteMenu(@ModelAttribute("menuID")int theID,@ModelAttribute("restoID")int restoID,Model model) {
-		
+	public String deleteMenu(@CookieValue(value = "priv", defaultValue = "nonadmin") String kue, @ModelAttribute("menuID")int theID,@ModelAttribute("restoID")int restoID,Model model) {
+		if(!kue.equals("admin"))
+			return "/admin/login";
 		menuService.deleteMenu(theID);
 		
 		model.addAttribute("restoranID",restoID);
@@ -187,8 +207,9 @@ public class AdminController {
 	}
 	
 	@GetMapping("/showFormForAddTag")
-	public String addTag(Model theModel){
-		
+	public String addTag(@CookieValue(value = "priv", defaultValue = "nonadmin") String kue, Model theModel){
+		if(!kue.equals("admin"))
+			return "/admin/login";
 		Tag tag = new Tag();
 		
 		theModel.addAttribute("tagku", tag);
@@ -197,16 +218,18 @@ public class AdminController {
 	}
 	
 	@PostMapping("/saveTag")
-	public String saveTag(@ModelAttribute("tagku") Tag tag) {
-		
+	public String saveTag(@CookieValue(value = "priv", defaultValue = "nonadmin") String kue, @ModelAttribute("tagku") Tag tag) {
+		if(!kue.equals("admin"))
+			return "/admin/login";
 		tagService.saveTag(tag);
 		
 		return "redirect:/admin/managetag";
 	}
 	
 	@GetMapping("/editRestoTag")
-	public String editRestoTag(@ModelAttribute("restoranID")int restoID,Model myModel) {
-		
+	public String editRestoTag(@CookieValue(value = "priv", defaultValue = "nonadmin") String kue, @ModelAttribute("restoranID")int restoID,Model myModel) {
+		if(!kue.equals("admin"))
+			return "/admin/login";
 		Restoran resto = restoranService.getRestoranByID(restoID);
 		
 		List <Tag> tagku = tagService.getTagIn(restoID);
@@ -218,8 +241,9 @@ public class AdminController {
 	}
 	
 	@GetMapping("/addRestoTag")
-	public String addRestoTag(@ModelAttribute("restoID")int theResID,@ModelAttribute("tagID")int theTagID,Model model) {
-		
+	public String addRestoTag(@CookieValue(value = "priv", defaultValue = "nonadmin") String kue, @ModelAttribute("restoID")int theResID,@ModelAttribute("tagID")int theTagID,Model model) {
+		if(!kue.equals("admin"))
+			return "/admin/login";
 		Restoran resto = restoranService.getRestoranByID(theResID);
 		Tag tag = tagService.getTagByID(theTagID);
 		
@@ -233,8 +257,9 @@ public class AdminController {
 	}
 	
 	@GetMapping("/deleteTag")
-	public String deleteTag(@ModelAttribute("tagID")int tagID) {
-		
+	public String deleteTag(@CookieValue(value = "priv", defaultValue = "nonadmin") String kue, @ModelAttribute("tagID")int tagID) {
+		if(!kue.equals("admin"))
+			return "/admin/login";
 		tagService.deleteTag(tagID);
 		
 		return "redirect:/admin/managetag";
